@@ -1,0 +1,10 @@
+<h1>Contenu de {{dirname}}</h1>
+<ul>
+  {{#each files}}
+    {{#if isDirectory}}
+      <li>{{name}} ({{size}}B)</li>
+    {{else}}
+      <li><a href="/download/{{../dirname}}/{{name}}">{{name}}</a> ({{size}}B)</li>
+    {{/if}}
+  {{/each}}
+</ul>

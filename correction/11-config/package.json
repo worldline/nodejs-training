@@ -1,0 +1,30 @@
+{
+  "name": "file-server",
+  "version": "1.0.0",
+  "description": "HTTP file server",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "NODE_ENV=test nyc --all --include 'app/**/*.js' mocha",
+    "watch": "NODE_ENV=test mocha -w"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "caw": "^2.0.1",
+    "config": "^3.0.1",
+    "express": "^4.16.4",
+    "express-handlebars": "^3.0.2",
+    "express-winston": "^3.1.0",
+    "got": "^9.6.0",
+    "winston": "^3.2.1"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "chai-as-promised": "^7.1.1",
+    "mocha": "^6.0.2",
+    "nock": "^10.0.6",
+    "nyc": "^13.3.0",
+    "sinon": "^7.3.0"
+  }
+}

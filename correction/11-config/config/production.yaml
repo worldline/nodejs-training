@@ -1,0 +1,3 @@
+# configuration for production
+log:
+  level: info
