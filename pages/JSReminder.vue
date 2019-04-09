@@ -234,10 +234,10 @@
 
   // map() crée un nouveau tableau avec les résultats de l'appel d'une fonction fournie sur chaque élément du tableau
   const squareNumbers = numbers.map(elem => elem * elem);
-  console.log(squareMap); // [1, 4, 9, 16]
+  console.log(squareNumbers); // [1, 4, 9, 16]
 
   // filter() crée un nouveau tableau contenant tous les éléments du tableau d'origine qui remplissent une condition déterminée
-  const evenNumbers = numbers.filter(elem % 2 === 0);
+  const evenNumbers = numbers.filter(elem => elem % 2 === 0);
   console.log(evenNumbers); // [2, 4]
             </code>
           </pre>
@@ -443,7 +443,7 @@ console.log(b); // 7
 
 // Destructuring d'un objet avec des valeurs par défaut
 var {a, b = 21} = {a:45};
-console.log(a); // 41
+console.log(a); // 45
 console.log(b); // 21
 
 var {a, b} = null;
