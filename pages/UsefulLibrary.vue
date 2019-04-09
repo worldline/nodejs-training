@@ -33,7 +33,6 @@ _.set(a, 'b.c[3].d.e', 'e');
             <v-alert :value="true" color="warning" icon="warning" outline>
               Les versions récentes de JavaScript permettent de limiter l'usage de lodash. Pour plus d'information <a href="https://github.com/you-dont-need/You-Dont-Need-Lodash-Underscore">You don't need lodash</a>
             </v-alert>
-
           </p>
         </v-card-text>
 
@@ -78,7 +77,6 @@ console.log(jun.tz('Australia/Sydney').format('ha z'));
 dec.tz('Australia/Sydney').format('ha z');
             </runkit-embedded>
             <!-- eslint-enable -->
-
           </p>
         </v-card-text>
 
@@ -139,16 +137,16 @@ utils.sayGoodMorning('Yann');
           </p><br>
 
           <v-card-title class="subheading secondary--text"><code>mock</code></v-card-title>
-            Les <a href="https://sinonjs.org/releases/v7.3.1/mocks/">Mocks</a> ne modifient pas un objet mais créent un <i>objet mock</i> avec de fausses méthodes et des comportements attendus pré-définis.<br><br>
+          Les <a href="https://sinonjs.org/releases/v7.3.1/mocks/">Mocks</a> ne modifient pas un objet mais créent un <i>objet mock</i> avec de fausses méthodes et des comportements attendus pré-définis.<br><br>
 
-            Par exemple, si l'on souhaite s'assurer que la méthode <code>smsManager.sendTo</code> est bien appelée deux fois dans la fonction <code>api()</code> :
-            <pre v-highlightjs>
-              <code class="javascript">
+          Par exemple, si l'on souhaite s'assurer que la méthode <code>smsManager.sendTo</code> est bien appelée deux fois dans la fonction <code>api()</code> :
+          <pre v-highlightjs>
+            <code class="javascript">
 const sinon = require('sinon');
 
 const api() => {
-  smsManager.sendTo('Yann', 'Yo!');
-  smsManager.sendTo('Quentin', 'Yo!');
+smsManager.sendTo('Yann', 'Yo!');
+smsManager.sendTo('Quentin', 'Yo!');
 };
 
 // On utilise un mock sur l'objet "smsManager"
@@ -160,14 +158,13 @@ api();
 
 // Propagera une exception s'il n'y a pas exactement 2 appels à "sendTo" dans "api()"
 mock.verify();
-              </code>
-            </pre>
-            <br>
+            </code>
+          </pre>
+          <br>
 
-            <v-alert :value="true" color="info" icon="info" outline>
-              <code>Sinon</code> apporte également d'autres fonctionnalités comme les <code>stubs</code>, <code>spies</code>, <code>spy calls</code>, <code>fake timers</code>, pour plus d'informations voir la <a href="https://sinonjs.org/releases/v7.3.1/">documentation officielle</a>.
-            </v-alert>
-
+          <v-alert :value="true" color="info" icon="info" outline>
+            <code>Sinon</code> apporte également d'autres fonctionnalités comme les <code>stubs</code>, <code>spies</code>, <code>spy calls</code>, <code>fake timers</code>, pour plus d'informations voir la <a href="https://sinonjs.org/releases/v7.3.1/">documentation officielle</a>.
+          </v-alert>
         </v-card-text>
       </v-card>
     </v-flex>
