@@ -178,7 +178,7 @@ console.log('{{ range }} is equivalent to ' + toComparators('{{ range }}') + '. 
           <v-card-title class="subheading primary--text">NPM en ligne de commande</v-card-title>
           <p>NPM fournit un outil en ligne de commande qui permet de gérer le cycle de vie d'un module :</p>
           <ul>
-            <li><code>npm init</code> : permet d'initialiser un module NPM (création du fichier <code>package.json</code></li>
+            <li><code>npm init</code> : permet d'initialiser un module NPM (création du fichier <code>package.json</code>)</li>
             <li><code>npm install</code> : permet d'installer les dépendances dans le dossier <code>node_modules</code></li>
             <li>
               <code>npm install &lt;nom-d-une-librairie&gt;</code> : permet d'ajouter le module <code>nom-d-une-librairie</code>
