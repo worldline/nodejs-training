@@ -10,7 +10,7 @@
             <img src="~/assets/nodejs-libuv-v8.png" alt="Node.js + libuv + V8" class="mb-5">
           </div>
           <ul>
-            <li><b>libuv</b> est une bibliothèque C multi-plateforme qui prend en charge les entrées / sorties asynchrones basées sur des boucles d'événement</li>
+            <li><b>libuv</b> est une bibliothèque C multi-plateforme qui prend en charge les entrées / sorties asynchrones basées sur une boucle d'évènements</li>
             <li><b>V8</b> est un moteur JavaScript libre et open source développé par Google en C++</li>
           </ul>
           <br>
@@ -23,12 +23,12 @@
         <v-card-text>
           <p>Quelques dates importantes :</p>
           <ul>
-            <li>1995 : Création du langage LiveScript, inspiré du Java, interprété conçu pour écrire des serveur HTTP. Il sera renommé en JavaScript dans sa version intégré par Netscape;</li>
-            <li>1997 : Spécification du langage par l'ECMA;</li>
+            <li>1995 : Création du langage LiveScript, inspiré du Java, interprété conçu pour écrire des serveurs HTTP. Il sera renommé en JavaScript dans sa version intégrée par Netscape ;</li>
+            <li>1997 : Spécification du langage par l'ECMA ;</li>
             <li>2006 : Lancement de JQuery;</li>
-            <li>2008 : Le moteur V8 est intégré dans Chrome et Chromium;</li>
-            <li>2009 : Création de Node.js;</li>
-            <li>2015 : EcmaScript 2015 (ES6) est approuvé le 17 juin;</li>
+            <li>2008 : Le moteur V8 est intégré dans Chrome et Chromium ;</li>
+            <li>2009 : Création de Node.js ;</li>
+            <li>2015 : EcmaScript 2015 (ES6) est approuvé le 17 juin ;</li>
             <li>2018 : Node.js V10 en LTS (Support à Long Terme) le 24 avril.</li>
           </ul>
           <div class="mb-5 text-xs-center">
