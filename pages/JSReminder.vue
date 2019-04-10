@@ -157,7 +157,7 @@
         <v-card-text>
           <p>Les <b>fonctions</b> font partie des briques fondamentales de JavaScript. Une fonction est une procédure JavaScript, un ensemble d'instructions effectuant une tâche ou calculant une valeur.</p>
           <br>
-          <p>En JavaScript une fonction est définie par le mot clé <code>function</code> suivi d'un <b>nom</b> et de paranthèse <b>()</b></p>
+          <p>En JavaScript une fonction est définie par le mot clé <code>function</code> suivi d'un <b>nom</b> et de parenthèses <b>()</b></p>
           <pre v-highlightjs>
             <code class="javascript">
   function name(parameter1, parameter2, parameter3) {
@@ -165,7 +165,7 @@
   }
             </code>
           </pre>
-          <p>Le nombre d'argument d'une fonction est dynamique, <code>arguments</code> est un pseudo-tableau contenant les paramètres effectifs au moment de l'appel.</p>
+          <p>Le nombre d'arguments d'une fonction est dynamique, <code>arguments</code> est un pseudo-tableau contenant les paramètres effectifs au moment de l'appel.</p>
           <v-alert :value="true" color="info" icon="info" outline>
             En ES6, il est préférable d'utiliser la syntaxe <a target="_blank" href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Fonctions/param%C3%A8tres_du_reste">Mozilla Developer Network - Rest parameters</a> qui permet de représenter un nombre indéfini d'arguments sous forme de tableau : <code class="javascript">function sum(...theArgs) {}</code>
           </v-alert>
@@ -196,7 +196,7 @@
   const square = nb => nb * nb; // le return est implicite sur une seule ligne
   console.log(square(2)); // => 4
 
-  const sum = (a, b) => { // les parathèses sont obligatoires si vous avez au moins deux arguments
+  const sum = (a, b) => { // les parenthèses sont obligatoires si vous avez au moins deux arguments
     return a + b;
   }
   console.log(sum(2, 3)); => 5
@@ -280,7 +280,7 @@
       <v-card>
         <v-card-title class="title primary--text">Structures conditionnelles</v-card-title>
         <v-card-text>
-          <p>Comme beaucoup de langages inspirés du C, Javascript utilise le <a target="_blank" href="https://en.wikipedia.org/wiki/Short-circuit_evaluation">short-circuit evaluation</a> pour les conditions : </p>
+          <p>Comme beaucoup de langages inspirés du C, JavaScript utilise le <a target="_blank" href="https://en.wikipedia.org/wiki/Short-circuit_evaluation">short-circuit evaluation</a> pour les conditions : </p>
           <p class="subheading primary--text">Le if / else</p>
           <pre v-highlightjs>
             <code class="javascript">
@@ -459,7 +459,7 @@ console.log(a); // "TypeError: Cannot destructure property `a` of 'undefined' or
         <v-card-title class="title primary--text">Hands on!</v-card-title>
         <v-card-text>
           <ol>
-            <li>Créez un taleau <code>days</code> contenant les jours de la semaine, et faites un extrait des jours ouvrés dans une variable <code>workingDays</code></li>
+            <li>Créez un tableau <code>days</code> contenant les jours de la semaine, et faites un extrait des jours ouvrés dans une variable <code>workingDays</code></li>
             <li>Affichez <code>days</code> <code>workingDays</code> et le troisième jour ouvré dans la console</li>
             <li>Créez une bière avec comme nom <b>Brewdog Punk Ipa</b> et 10 unités</li>
             <li>Créez une function <code>drink</code> qui accepte une bière et un nombre en paramètres. Elle décrémente le nombre d'unité de bière et renvoie une chaine avec le nom et le nombre de bières bues</li>
