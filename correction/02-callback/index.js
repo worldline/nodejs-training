@@ -24,6 +24,6 @@ getDirContent(join(__dirname, 'package.json'), (err, content) => {
   if(err) {
     console.log('getDirContent(\'package.json\') unexpected error:', err.message);
   } else {
-    console.log('getDirContent(\'package.json\'):', content.message);
+    console.log('getDirContent(\'package.json\'):', content);
   }
 });

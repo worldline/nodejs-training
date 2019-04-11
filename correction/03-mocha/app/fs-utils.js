@@ -7,7 +7,7 @@ const { readdir } = require('fs');
  * @param {getDirContent-CB} done - completion callback
  *
  * @callback getDirContent-CB
- * @param {Error} err - an optionnal error if path cannot be read as directory
+ * @param {Error} err - an optional error if path cannot be read as directory
  * @param {String[]} result - directory content.
  */
 exports.getDirContent = (path, done) => {
