@@ -22,7 +22,7 @@ app.use(morgan('tiny'));
 app.get('/browse/:dirname', async (req, res, next) => {
   try {
     const content = await getDirStat(join(__dirname, '..', 'static', req.params.dirname));
-    // Retrive directory content
+    // Retrieve directory content
     const files = content.map(stat => ({
       name: stat.name,
       size: stat.size,

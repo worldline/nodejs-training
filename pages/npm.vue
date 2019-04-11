@@ -20,7 +20,7 @@
             <ul>
               <li><a href="https://momentjs.com/docs/">moment</a> : permet de manipuler des dates</li>
               <li><a href="https://lodash.com/docs">lodash</a> : permet de manipuler des objets, tableaux...</li>
-              <li><a href="https://www.npmjs.com/package/request">request</a> : permet d'effectuer des requêtes HTTP</li>
+              <li><a href="https://www.npmjs.com/package/got">got</a> : permet d'effectuer des requêtes HTTP</li>
               <li>et pleins d'autres</li>
             </ul>
 

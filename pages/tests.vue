@@ -6,7 +6,7 @@
         <v-card-text>
           <v-card-title class="subheading primary--text">Executer des tests avec mocha</v-card-title>
           <p>
-            <a href="https://mochajs.org/">Mocha</a> est un framework de test Javascript qui fournit les fonctionnalités suivantes :
+            <a href="https://mochajs.org/">Mocha</a> est un framework de test JavaScript qui fournit les fonctionnalités suivantes :
             <ul>
               <li>compatibilité Node.js et navigateur ;</li>
               <li>gestion du code synchrone et asynchrone (callback, promesses, async/await) ;</li>
@@ -37,7 +37,7 @@ describe('Array#indexOf', () => {
             Dans l'exemple ci-dessus :
             <ul>
               <li><code>assert</code> est un module qui fait parti du coeur de Node.js (ci-dessous, nous présenterons la librairie <code>chai</code> qui est fonctionnellement plus riche) ;</li>
-              <li><code>describe()</code> et <code>it()</code> sond des fonctions globales qui sont définies par mocha (il n'y a donc pas besoin d'utiliser <code>require</code> pour importer mocha) ;</li>
+              <li><code>describe()</code> et <code>it()</code> sont des fonctions globales qui sont définies par mocha (il n'y a donc pas besoin d'utiliser <code>require</code> pour importer mocha) ;</li>
               <li>l'intérêt d'utiliser la syntaxe BDD est qu'elle permet de faire des phrases expliquant le cas de test (ex : "it should return -1 when the value is not present")</li>
             </ul>
           </p>

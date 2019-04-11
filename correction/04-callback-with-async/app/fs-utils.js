@@ -8,7 +8,7 @@ const fs = require('fs');
  * @param {getDirContent-CB} done - completion callback
  *
  * @callback getDirContent-CB
- * @param {Error} err - an optionnal error if path cannot be read as directory
+ * @param {Error} err - an optional error if path cannot be read as directory
  * @param {String[]} result - directory content.
  */
 exports.getDirContent = (path, done) => {
@@ -29,7 +29,7 @@ exports.getDirContent = (path, done) => {
  * @param {getDirStat-CB} done - completion callback, invoked with parameters:
  *
  * @callback getDirStat-CB
- * @param {Error} err - an optionnal error if path cannot be read as directory
+ * @param {Error} err - an optional error if path cannot be read as directory
  * @param {Object[]} result - details of each element contained
  * @param {String} result.name - inspected item name
  * @param {String} result.path - inspected item path
@@ -38,7 +38,7 @@ exports.getDirContent = (path, done) => {
  */
 exports.getDirStat = (path, done) => {
   async.waterfall([
-    // Retrive list of files
+    // Retrieve list of files
     (next) => exports.getDirContent(path, next),
     // For each file, call fs.stat
     (files, next) => {
