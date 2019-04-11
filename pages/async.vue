@@ -6,7 +6,7 @@
 
         <v-card-text>
           <p>
-            Afin de faciliter l'écriture de code asynchrone, Javascript permet maintenant d'utiliser 2 nouveaux mots clés <code>async</code> et <code>await</code>.
+            Afin de faciliter l'écriture de code asynchrone, JavaScript permet maintenant d'utiliser 2 nouveaux mots clés <code>async</code> et <code>await</code>.
             Ils sont disponibles depuis ES2017 (Node.js 8).
           </p>
 
