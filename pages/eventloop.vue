@@ -9,7 +9,7 @@
           <p>
             Node.js est composé :
             <ul>
-              <li>de V8, qui un moteur Javascript : c'est lui qui va s'occuper d'exécuter notre code Javascript ;</li>
+              <li>de V8, qui un moteur JavaScript : c'est lui qui va s'occuper d'exécuter notre code JavaScript ;</li>
               <li>de libuv, qui est une librairie permettant de gérer les entrées / sorties via des évènements.</li>
             </ul>
           </p>
@@ -27,7 +27,7 @@
             Dans le code ci-dessus, dans l'ordre :
             <ol>
               <li>V8 exécute la ligne <code>fs.readdir</code> : Node.js va déléguer la lecture du dossier à libuv, en lui fournissant également le callback associé ;</li>
-              <li>V8 continue l'exécution du code Javascript et affiche "fin du fichier" ;</li>
+              <li>V8 continue l'exécution du code JavaScript et affiche "fin du fichier" ;</li>
               <li>quelques instants plus tard, quand le lecture fichier sera terminée, libuv va recevoir une évènement qui sera mis dans une file d'attente ;</li>
               <li>quand il n'y aura plus de code JS en cours d'exécution, libuv va dépiler les files d'attente et exécuter les callbacks présents associés.</li>
             </ol>
@@ -69,7 +69,7 @@
           <v-alert :value="true" color="info" icon="info" outline>
             De ce fonctionnement, il faut retenir que :
             <ul>
-              <li>le code Javascript en cours d'exécution ne sera jamais interrompu par un callback ;</li>
+              <li>le code JavaScript en cours d'exécution ne sera jamais interrompu par un callback ;</li>
               <li>la pile d'exécution d'un callback repart de zéro, car le callback est appelé par libuv, pas par la fonction asynchrone ;</li>
               <li>une exception levée dans un callback ne peut-être catchée par un <code>try/catch</code> autour de la fonction asynchrone, et par défaut provoquera l'arrêt du processus Node.js ;</li>
               <li>deux évènements de types différents peuvent ne pas être traitées dans l'ordre où ils sont arrivés ;</li>

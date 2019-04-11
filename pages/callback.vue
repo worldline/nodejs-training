@@ -5,7 +5,7 @@
         <v-card-title class="headline primary--text">L'asynchronisme avec les callbacks</v-card-title>
 
         <v-card-text>
-          <v-card-title class="subheading primary--text">Pourquoi l'asynchronisme en Javascript ?</v-card-title>
+          <v-card-title class="subheading primary--text">Pourquoi l'asynchronisme en JavaScript ?</v-card-title>
           <p>
             JavaScript (executé par V8 en Node.js) est mono-thread, c'est à dire que :
             <ul>

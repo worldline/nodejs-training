@@ -26,8 +26,8 @@
 
           <v-card-title class="subheading primary--text">Cluster</v-card-title>
           <p>
-            Aujourd'hui, la majorité des processeurs ont plusieurs coeurs, mais Javascript étant monothreadé, seulement un coeur sera réellement utilisé.
-            Pour répondre à ce besoin, Node.js fournit le module <a href="https://nodejs.org/docs/latest/api/cluster.html">cluster</a>, qui permet d'exécuter du code Javascript dans un nouveau processus.
+            Aujourd'hui, la majorité des processeurs ont plusieurs coeurs, mais JavaScript étant monothreadé, seulement un coeur sera réellement utilisé.
+            Pour répondre à ce besoin, Node.js fournit le module <a href="https://nodejs.org/docs/latest/api/cluster.html">cluster</a>, qui permet d'exécuter du code JavaScript dans un nouveau processus.
             A noter :
             <ul>
               <li>il s'agit de processus distincts, c'est-à-dire qu'ils n'utilisent pas la même mémoire ;</li>
