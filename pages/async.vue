@@ -83,7 +83,7 @@ const doHelloTwice = async () => {
           <p>
             <ol>
               <li>
-                Dans le module <code>app/fs-utils.js</code>, modifier les fonctions <code>getDirStat()</code> et <code>getDirStat()</code>
+                Dans le module <code>app/fs-utils.js</code>, modifier les fonctions <code>getDirContent()</code> et <code>getDirStat()</code>
                 pour utiliser <code>async</code> et <code>await</code> (et donc ne plus utiliser <code>new Promise()</code>, <code>.then()</code>...)
               </li>
               <li>
