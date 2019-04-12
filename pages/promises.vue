@@ -35,7 +35,8 @@ const getFileContent = () => {
       }
       resolve(res);
     });
-});</code></pre><br>
+  });
+}</code></pre><br>
               </li>
               <li>
                 Les méthodes de la classe <code>Promise</code> sont :
