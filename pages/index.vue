@@ -18,7 +18,7 @@
             <li>une <b>mise en pratique</b> du concept afin de progressivement arrivée à l’application finale.</li>
           </ul>
           <br>
-          <p>Une <b>solution</b> d’implémentation de l’application est proposée (<a target="_blank" href="http://TODO.com">sources</a> avec des tags pour chaque étape). Bien entendu, il est vivement recommandé de tenter l’exercice par soi-même avant de recourir à la solution.</p>
+          <p>Une <b>solution</b> d’implémentation de l’application est proposée (<a target="_blank" href="https://github.com/worldline/nodejs-training/tree/master/correction">correction</a> pour chaque étape). Bien entendu, il est vivement recommandé de tenter l’exercice par soi-même avant de recourir à la solution.</p>
           <br>
           <p>Ce support sert également pour le déroulement de <b>formations présentielles</b> et certains aspects théoriques mais aussi certains exercices pratiques sont, d’un point de vue pédagogique, plus efficaces s’ils sont accompagnés par des explications d’un formateur. Néanmoins, ce support peut aussi être utilisé en <b>autonomie</b>.</p>
         </v-card-text>
