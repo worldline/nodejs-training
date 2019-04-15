@@ -55,7 +55,7 @@
             <ul>
               <li>le paramètre <code>req</code> des middlewares express est un <code>Readable</code> ;</li>
               <li>le paramètre <code>res</code> des middlewares express est un <code>Writable</code> ;</li>
-              <li><code>request</code> retourne un <code>Duplex</code>.</li>
+              <li><code>got</code> peut retourner un <code>Duplex</code> avec l'option <code>stream: true</code> (voir <a href="https://www.npmjs.com/package/got#gotstreamurl-options">got stream</a>).</li>
             </ul>
           </p>
         </v-card-text>

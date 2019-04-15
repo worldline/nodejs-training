@@ -283,15 +283,12 @@
           <p>Comme beaucoup de langages inspirés du C, JavaScript utilise le <a target="_blank" href="https://en.wikipedia.org/wiki/Short-circuit_evaluation">short-circuit evaluation</a> pour les conditions : </p>
           <p class="subheading primary--text">L'égalité</p>
           <p>
-            JavaScript propose deux types de comparaison: <br>
+            JavaScript propose deux types de comparaison : <br>
             <ul>
-              <li>La comparaison stricte <code>===</code> qui compare la valeur et le type des élèments</li>
-              <li>La comparaison faible <code>==</code> qui convertit les deux opérandes en un même type et compare les valeurs</li>
+              <li>La comparaison stricte <code>===</code> qui compare la valeur et le type des élèments ;</li>
+              <li>La comparaison faible <code>==</code> qui convertit les deux opérandes en un même type et compare les valeurs.</li>
             </ul>
           </p>
-          <v-alert :value="true" color="info" icon="info" outline>
-            Nous vous recommandons de toujours utiliser l'égalité stricte <code>===</code> !
-          </v-alert>
           <!-- eslint-disable -->
           <runkit-embedded>
 console.log(`'1' == 1 vaut ${'1' == 1}`);
@@ -305,6 +302,9 @@ console.log(`0 == false vaut ${0 == false}`);
 console.log(`0 === false vaut ${0 === false}`);
           </runkit-embedded>
           <!-- eslint-enable -->
+          <v-alert :value="true" color="info" icon="info" outline>
+            Nous vous recommandons de toujours utiliser l'égalité stricte <code>===</code> !
+          </v-alert>
           <br>
           <p class="subheading primary--text">Les valeurs fausses (falsy)</p>
           <p>
