@@ -17,13 +17,13 @@
           </v-alert>
           <br>
           <p>
-            Il est également conseillé d'utiliser un formatteur pour écrire du code facile à lire.
+            Il est également conseillé d'utiliser un formateur pour écrire du code facile à lire.
           </p>
           <p>
             Pour cela, vous pouvez :
             <ul>
-              <li>activer le formattage automatique sur votre IDE (sur vscode : ce sont les paramètres <code>Format On Save</code> et / ou <code>Format On Type</code>) ;</li>
-              <li>utiliser <a href="https://prettier.io/">Prettier</a>, qui fournit un ensemble de règles de formattage, des plugins pour les différents IDE et un outil en ligne de commande qui permet notamment de vérifier le format (utile pour l'intégration continue) ;</li>
+              <li>activer le formatage automatique sur votre IDE (sur vscode : ce sont les paramètres <code>Format On Save</code> et / ou <code>Format On Type</code>) ;</li>
+              <li>utiliser <a href="https://prettier.io/">Prettier</a>, qui fournit un ensemble de règles de formatage, des plugins pour les différents IDE et un outil en ligne de commande qui permet notamment de vérifier le format (utile pour l'intégration continue) ;</li>
               <li>utiliser <a href="https://eslint.org/">eslint</a>, qui permet de définir un ensemble de règles, notamment pour éviter certaines erreurs de programmation (par exemple pour interdire l'utilisation de <code>==</code>).</li>
             </ul>
           </p>
