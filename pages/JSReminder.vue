@@ -199,9 +199,25 @@
   const sum = (a, b) => { // les parenthèses sont obligatoires si vous avez au moins deux arguments
     return a + b;
   }
-  console.log(sum(2, 3)); => 5
+  console.log(sum(2, 3)); // => 5
             </code>
           </pre>
+          <p class="subheading primary--text">Fonction et portée</p>
+          <pre v-highlightjs>
+            <code class="javascript">
+  const animal = (nom) => {  // La fonction externe utilise un paramètre "nom"
+    const getNom = () => {
+      return nom;            // La fonction interne accède à la variable "nom" de la fonction externe
+    }
+    return getNom;           // Renvoie la fonction interne pour la rendre disponible en dehors de la portée de la fonction parente
+  }
+
+  const monAnimal = animal("Licorne");
+
+  monAnimal();               // Renvoie "Licorne"
+            </code>
+          </pre>
+          <p>La fonction interne est disponible en dehors de la fonction parente, c'est ce qu'on appelle une <a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Guide/Fonctions#Fermetures_(closures)">fermeture</a> (<i>closure</i>).</p><br>
           <v-alert :value="true" color="info" icon="info" outline>
             Pour aller plus loin, voir <a target="_blank" href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Guide/Fonctions">Mozilla Developer Network - Fonctions</a>
           </v-alert>
