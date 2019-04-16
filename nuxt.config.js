@@ -29,7 +29,7 @@ module.exports = {
   /*
   ** Customize the base url
   */
-  router: { base: '/nodejs-training/' },
+  router: { base: '/nodejs-training/', mode: 'hash' },
   /**
    * Generation route
    */
