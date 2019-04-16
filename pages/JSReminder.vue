@@ -261,9 +261,9 @@
           <p>L'instruction <b>for...of</b> permet de créer une boucle Array qui parcourt un <a target="_blank" href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Les_protocoles_iteration#Le_protocole_.C2.AB_it.C3.A9rable_.C2.BB">objet itérable</a> (ce qui inclut les objets Array, Map, Set, String, TypedArray, l'objet arguments, etc.) et qui permet d'exécuter une ou plusieurs instructions pour la valeur de chaque propriété.</p>
           <pre v-highlightjs>
             <code class="javascript">
-  const m = new Map([["foo", "hello"], ["bar", "world"]]);
-  for (const [name, value] of m) {
-    console.log(name + "->" + value); //"foo->hello", "bar->world"
+  const s = new Set([1, 2, 2, 3, 3, 3]);
+  for (const elem of s) {
+    console.log(s); // 1, 2, 3
   }
 
   const obj = { foo: "hello", bar: "world" };
