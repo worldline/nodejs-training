@@ -263,7 +263,7 @@
             <code class="javascript">
   const s = new Set([1, 2, 2, 3, 3, 3]);
   for (const elem of s) {
-    console.log(s); // 1, 2, 3
+    console.log(elem); // 1, 2, 3
   }
 
   const obj = { foo: "hello", bar: "world" };
