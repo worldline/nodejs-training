@@ -261,9 +261,9 @@
           <p>L'instruction <b>for...of</b> permet de créer une boucle Array qui parcourt un <a target="_blank" href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Les_protocoles_iteration#Le_protocole_.C2.AB_it.C3.A9rable_.C2.BB">objet itérable</a> (ce qui inclut les objets Array, Map, Set, String, TypedArray, l'objet arguments, etc.) et qui permet d'exécuter une ou plusieurs instructions pour la valeur de chaque propriété.</p>
           <pre v-highlightjs>
             <code class="javascript">
-  const m = new Map([["foo", "hello"], ["bar", "world"]]);
-  for (const [name, value] of m) {
-    console.log(name + "->" + value); //"foo->hello", "bar->world"
+  const s = new Set([1, 2, 2, 3, 3, 3]);
+  for (const elem of s) {
+    console.log(elem); // 1, 2, 3
   }
 
   const obj = { foo: "hello", bar: "world" };
@@ -281,6 +281,42 @@
         <v-card-title class="title primary--text">Structures conditionnelles</v-card-title>
         <v-card-text>
           <p>Comme beaucoup de langages inspirés du C, JavaScript utilise le <a target="_blank" href="https://en.wikipedia.org/wiki/Short-circuit_evaluation">short-circuit evaluation</a> pour les conditions : </p>
+          <p class="subheading primary--text">L'égalité</p>
+          <p>
+            JavaScript propose deux types de comparaison : <br>
+            <ul>
+              <li>La comparaison stricte <code>===</code> qui compare la valeur et le type des élèments ;</li>
+              <li>La comparaison faible <code>==</code> qui convertit les deux opérandes en un même type et compare les valeurs.</li>
+            </ul>
+          </p>
+          <!-- eslint-disable -->
+          <runkit-embedded>
+console.log(`'1' == 1 vaut ${'1' == 1}`);
+
+console.log(`1 === 1 vaut ${1 === 1}`);
+
+console.log(`'1' === 1 vaut ${'1' === 1}`);
+
+console.log(`0 == false vaut ${0 == false}`);
+
+console.log(`0 === false vaut ${0 === false}`);
+          </runkit-embedded>
+          <!-- eslint-enable -->
+          <v-alert :value="true" color="info" icon="info" outline>
+            Nous vous recommandons de toujours utiliser l'égalité stricte <code>===</code> !
+          </v-alert>
+          <br>
+          <p class="subheading primary--text">Les valeurs fausses (falsy)</p>
+          <p>
+            Les valeurs fausses (<a href="https://developer.mozilla.org/fr/docs/Glossaire/Falsy">falsy</a>) sont des valeurs évaluées comme fausses quand elles sont évaluées dans un contexte booléen.<br>
+            <ul>
+              <li>Le booléen <code>false</code></li>
+              <li>Les types <code>null</code> et <code>undefined</code></li>
+              <li>Les nombres <code>0</code> et <code>NaN</code></li>
+              <li>Les chaines de caractères vides <code>""</code> et <code>''</code></li>
+            </ul>
+          </p>
+          <br>
           <p class="subheading primary--text">Le if / else</p>
           <pre v-highlightjs>
             <code class="javascript">
@@ -472,11 +508,8 @@ console.log(a); // "TypeError: Cannot destructure property `a` of 'undefined' or
 </template>
 
 <script>
+import RunkitEmbedded from '../components/runkit-embedded'
 export default {
-  data () {
-    return {
-      sourceCode: 'const s = new Date().toString()'
-    }
-  }
+  components: { RunkitEmbedded }
 }
 </script>
