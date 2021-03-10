@@ -32,7 +32,7 @@ const { body } = await got('http://www.google.com');</code></pre>
             Pour faire des requêtes plus complexes, il est aussi possible de passer un objet en deuxième paramètre :
             <pre v-highlightjs><code language="js">const res = await got('http://www.google.com/search', {
   method: 'GET',
-  query: {
+  searchParams: {
     q: 'request'
   }
 });</code></pre>
@@ -42,10 +42,10 @@ const { body } = await got('http://www.google.com');</code></pre>
             La liste complète des options est disponible dans le <a href="https://www.npmjs.com/package/got">readme</a>. Les plus souvent utilisées sont :
             <ul>
               <li><code>method</code> : la méthode HTTP (GET, POST...) ;</li>
-              <li><code>query</code> : les paramètres en query-string ;</li>
+              <li><code>searchParams</code> : les paramètres en query-string ;</li>
               <li><code>body</code> : le corps de la requête ;</li>
-              <li><code>json: true</code> : permet de spécifier que le body envoyé est en JSON, et permet de parser automatiquement la réponse ;</li>
-              <li><code>agent</code> : permet de fournir un agent HTTP (utile notamment pour utiliser un proxy).</li>
+              <li><code>responseType: 'json'</code> permet de parser automatiquement la réponse JSON ;</li>
+              <li><code>agent</code> : permet de fournir un agent HTTP/HTTPS/HTTP2 (utile notamment pour utiliser un proxy).</li>
             </ul>
           </p>
 

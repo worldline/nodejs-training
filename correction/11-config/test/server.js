@@ -29,7 +29,7 @@ describe('HTTP server', () => {
   describe('/browse route', () => {
     it('should return the content of the folder /quentin', async () => {
       // Request GET /foo
-      const resp = await httpRequest('http://127.0.0.1:8080/browse/quentin', { json: true });
+      const resp = await httpRequest('http://127.0.0.1:8080/browse/quentin', { responseType: 'json' });
 
       // Check status
       expect(resp).to.have.property('statusCode').that.equals(200);

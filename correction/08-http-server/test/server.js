@@ -6,7 +6,7 @@ const got = require('got');
 
 // got instance for test
 const httpRequest = got.extend({
-  json: true,
+  responseType: 'json',
   timeout: 1000,
   retry: 0,
   throwHttpErrors: false // Don't throw an error on 404
@@ -57,7 +57,7 @@ describe('HTTP server', () => {
     it('should return the content of the folder /quentin in html', async () => {
       // Request GET /foo
       const resp = await httpRequest('http://127.0.0.1:8080/browse/quentin', {
-        json: false,
+        responseType: 'text',
         headers: {
           accept: 'text/html'
         }
