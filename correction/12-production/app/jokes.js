@@ -2,13 +2,18 @@ const got = require('got');
 
 // HTTP agent to manage proxy
 const caw = require('caw');
+const agent = caw();
 
 // Set default params
 const httpRequest = got.extend({
-  json: true,
+  responseType: 'json',
   timeout: 1000,
   retry: 0,
-  agent: caw()
+  agent: {
+    http: agent,
+		https: agent,
+    http2: agent
+  }
 });
 
 /**
@@ -18,7 +23,7 @@ const httpRequest = got.extend({
  */
 module.exports.getJoke = async () => {
   const { body } = await httpRequest('https://api.icndb.com/jokes/random', {
-    query: {
+    searchParams: {
       firstName: 'Quentin'
     }
   });
