@@ -16,7 +16,7 @@
               Il existe plusieurs manières de gérer les modules en JavaScript :
               <ul>
                 <li>CommonJS : utilisé par les versions actuelles de Node.js ;</li>
-                <li>import/export EcmaScript 6 : expérimental avec Node.js 11 ;</li>
+                <li>import/export EcmaScript 6 : à partir de la version 14 de Node.js (<a href="https://nodejs.org/api/esm.html">documentation</a>) ;</li>
                 <li>RequireJS : non supporté par Node.js.</li>
               </ul>
             </v-alert>
@@ -76,7 +76,7 @@ sayGoodbye('Julien');
           </p>
 
           <p>
-            Exemples:
+            Exemples :
             <pre v-highlightjs><code language="js">
 // Récupération de la fonction join exportée par le module path (module 'core' inclus dans Node.js)
 const { join } = require('path');
