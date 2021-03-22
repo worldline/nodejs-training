@@ -77,6 +77,7 @@
             <li><code>bin</code> : permet de déclarer une application exécutable en ligne de commande</li>
             <li><code>scripts</code> : permet de définir une commande qui sera executée via <code>npm run &lt;command&gt;</code></li>
             <li><code>engines</code> : permet de définir les versions de Node.js compatibles avec ce projet</li>
+            <li><code>type</code> : permet de spécifier le type format de module utilisé par Node.js pour les fichiers <code>.js</code> : <code>commonjs</code> (valeur par défaut) ou <code>module</code></li>
           </ul>
         </v-card-text>
 
@@ -152,7 +153,7 @@
             <v-card-title class="subheading secondary--text">Exercice</v-card-title>
             <p>
               Une librairie est disponible dans les versions suivantes :
-              <code>0.14.0, 0.14.1, 1.0.0, 1.0.1, 1.0.2, 2.0.0, 2.1.0, 2.1.1, 2.2.0, 2.2.1, 2.2.2, 2.3.0, 2.3.1, 3.0.0</code>
+              <code>0.0.1, 0.0.2, 0.14.0, 0.14.1, 1.0.0, 1.0.1, 1.0.2, 2.0.0, 2.1.0, 2.1.1, 2.2.0, 2.2.1, 2.2.2, 2.3.0, 2.3.1, 3.0.0</code>
             </p>
             <p>
               Quelle version de la librairie sera installée dans les cas suivants :
