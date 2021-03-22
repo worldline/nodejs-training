@@ -28,7 +28,7 @@
             <ol>
               <li>V8 exécute la ligne <code>fs.readdir</code> : Node.js va déléguer la lecture du dossier à libuv, en lui fournissant également le callback associé ;</li>
               <li>V8 continue l'exécution du code JavaScript et affiche "fin du fichier" ;</li>
-              <li>quelques instants plus tard, quand le lecture fichier sera terminée, libuv va recevoir une évènement qui sera mis dans une file d'attente ;</li>
+              <li>quelques instants plus tard, quand le lecture fichier sera terminée, libuv va recevoir un évènement qui sera mis dans une file d'attente ;</li>
               <li>quand il n'y aura plus de code JS en cours d'exécution, libuv va dépiler les files d'attente et exécuter les callbacks présents associés.</li>
             </ol>
           </p>
