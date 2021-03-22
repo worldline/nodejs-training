@@ -6,14 +6,13 @@
         <v-card-text>
           <p>Afin de pouvoir mener à bien cette formation, il est nécessaire d’avoir un environnement de travail bien configuré. Voici la liste des outils nécessaires :</p>
           <ul>
-            <li><a target="_blank" href="https://nodejs.org/en/">Node.js &#8805; 10</a> : la version en LTS actuellement</li>
-            <li><a target="_blank" href="https://www.npmjs.com/">npm &#8805; 6</a> : la version packagé avec Node.js 8</li>
+            <li><a target="_blank" href="https://nodejs.org/en/">Node.js &#8805; 14</a> : la version en LTS actuellement</li>
+            <li><a target="_blank" href="https://www.npmjs.com/">npm &#8805; 6</a> : la version packagé avec Node.js 14</li>
             <li>un IDE de votre choix (nous vous conseillons l'excellent <a target="_blank" href="https://code.visualstudio.com/">vscode</a>)</li>
           </ul>
           <br>
           <v-alert :value="true" color="info" icon="info" outline>
-            Afin d’éviter ce travail d’installation et de configuration nous vous conseillons d'utiliser une DevBox comme celle de <a href="https://github.com/jhipster/jhipster-devbox">JHipster devbox</a>.
-            <br>Elle contient (entre autres) : Node.js, npm, vscode, Postman & Chromium.
+            Afin d’éviter ce travail d’installation et de configuration nous vous conseillons d'utiliser une DevBox, par exemple : <a href="https://dev-box.gitlab-pages.kazan.myworldline.com/dev-box/">La Dev-Box MTS</a>.
           </v-alert>
           <br>
           <p>
