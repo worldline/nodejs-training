@@ -1,6 +1,6 @@
 <template>
-  <v-layout column justify-center align-center>
-    <v-flex xs12 sm8 md6>
+  <v-container>
+    
       <v-card>
         <v-card-title class="headline primary--text">Serveur HTTP</v-card-title>
 
@@ -24,7 +24,7 @@ http.createServer(function (req, res) {
               <li>renvoie la réponse "Hello World" aux requêtes entrantes</li>
             </ul>
             <br>
-            <v-alert :value="true" color="info" icon="info" outline>
+            <v-alert outlined :value="true" color="info" icon="info" outline>
               Bien qu'il soit tout à fait possible d'utiliser uniquement <code>http</code> pour créer des serveurs HTTP, la plupart des projets utilisent un framework comme <a href="https://expressjs.com/fr/">Express</a>, <a href="https://hapijs.com/">hapi</a> ou <a href="https://koajs.com/">koa</a>.
             </v-alert>
           </p>
@@ -66,7 +66,7 @@ app.listen(3000, function () {
               <li>sinon : on utilise <a href="http://expressjs.com/en/4x/api.html#app.use.method">app.use()</a> qui permet de définir un middleware qui sera executé quelque soit la requête (ce qui est utile pour écrire des logs par exemple, compression de la réponse...).</li>
             </ul>
             <strong>A noter : les middlewares sont executés dans l'ordre dans lequel ils sont déclarés.</strong>
-            <v-alert :value="true" color="info" icon="info" outline>
+            <v-alert outlined :value="true" color="info" icon="info" outline>
               Il est possible d'utiliser des expressions régulières, des masques et / ou des gestionnaires de routage. Pour plus d'information se référer à la documentation officielle : <a href="https://expressjs.com/fr/guide/routing.html">Express routing</a>.
             </v-alert>
           </p>
@@ -105,11 +105,11 @@ app.listen(3000, function () {
   res.status(500).send({ error: 'something blew up' });
 };
             </code></pre><br>
-            <v-alert :value="true" color="warning" icon="warning" outline>
+            <v-alert outlined :value="true" color="warning" icon="warning" outline>
               Le paramètre <code>next</code> est obligatoire même s'il n'est pas utilisé. En effet, c'est le nombre de paramètres qui permet à Express de différencier les middlewares d'erreur.
             </v-alert>
 
-            <v-alert :value="true" color="info" icon="info" outline>
+            <v-alert outlined :value="true" color="info" icon="info" outline>
               Il existe de nombreux middleware out-of-the-box pour Express : <a href="http://expressjs.com/en/resources/middleware.html">Middlewares</a>.
             </v-alert>
           </p>
@@ -126,17 +126,16 @@ app.listen(3000, function () {
               <li>loggue les requêtes / réponses du serveur (utiliser <a href="https://www.npmjs.com/package/morgan">morgan</a>) ;</li>
               <li>répond au format HTML sur une requête <code>GET /browse/foo</code> si le header <code>accept</code> contient <code>html</code> : pour cela, utiliser un moteur de template pour générer du HTML, c.f. <a href="https://expressjs.com/en/guide/using-template-engines.html">Express template engines</a> (nous recommandons <a href="https://www.npmjs.com/package/express-handlebars">express-handlebars</a>).</li>
             </ol>
-            <v-alert :value="true" color="info" icon="info" outline>
+            <v-alert outlined :value="true" color="info" icon="info" outline>
               Il est possible d'obtenir des logs d'express pour debugguer plus facilement : <a href="https://expressjs.com/fr/guide/debugging.html">https://expressjs.com/fr/guide/debugging.html</a>.
             </v-alert>
-            <v-alert :value="true" color="warning" icon="warning" outline>
+            <v-alert outlined :value="true" color="warning" icon="warning" outline>
               Il faut bien traiter les questions dans l'ordre (tests compris) avant de passer à la question suivante.
             </v-alert>
           </p>
         </v-card-text>
       </v-card>
-    </v-flex>
-  </v-layout>
+  </v-container>
 </template>
 
 <script>

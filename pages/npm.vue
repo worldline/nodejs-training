@@ -1,7 +1,7 @@
 <template>
-  <v-layout column justify-center align-center>
-    <v-flex xs12 sm8 md6>
-      <div class="text-xs-center">
+  <v-container>
+    
+      <div class="text-center">
         <img src="~/assets/npm.svg" alt="Vuetify.js" style="max-width: 200px" class="mb-5">
       </div>
       <v-card>
@@ -24,7 +24,7 @@
               <li>et pleins d'autres</li>
             </ul>
 
-            <v-alert :value="true" color="info" icon="info" outline>
+            <v-alert outlined :value="true" color="info" icon="info" outline>
               Il existe plus de 700 000 librairies sur NPM, et parmi elles, beaucoup ne sont plus maintenues.
               Le site NPM affiche le nombre de téléchargements et la date de dernière publication, ce qui permet de choisir entre plusieurs librairies.
             </v-alert>
@@ -139,12 +139,12 @@
             </ul>
           </p>
 
-          <v-alert :value="true" color="info" icon="info" outline>
+          <v-alert outlined :value="true" color="info" icon="info" outline>
             Il est recommandé d'utiliser la syntaxe <code>^1.2.3</code> afin d'utiliser automatiquement les dernières versions mineures des librairies.
             La mise à jour vers une nouvelle version majeure restera manuelle car elle peut nécessiter de modifier le code.
           </v-alert>
 
-          <v-alert :value="true" color="info" icon="info" outline>
+          <v-alert outlined :value="true" color="info" icon="info" outline>
             Il est recommandé d'utiliser la commande <code>npm install &lt;la-librairie&gt;</code> pour ajouter une librairie :
             NPM installera le nouveau package et se chargera de mettre à jour les fichiers <code>package.json</code> et <code>package-lock.json</code>.
           </v-alert>
@@ -192,12 +192,12 @@ console.log('{{ range }} is equivalent to ' + toComparators('{{ range }}') + '. 
             <li><code>npm publish</code>: permet de publier le module sur le registry NPM</li>
           </ul>
 
-          <v-alert :value="true" color="info" icon="info" outline>
+          <v-alert outlined :value="true" color="info" icon="info" outline>
             La commande <code>npm install</code> installe de manière récursive les dépendances des dépendances.
             C'est pour cela que le dossier <code>node_modules</code> contient souvent plusieurs centaines de modules.
           </v-alert>
 
-          <v-alert :value="true" color="info" icon="info" outline>
+          <v-alert outlined :value="true" color="info" icon="info" outline>
             Il est possible de définir des <code>scripts</code> qui vont se lancer avant ou après le lancement des scripts.
             Par exemple, la commande <code>npm install</code> va lancer dans l'ordre les scripts:
             <ul>
@@ -208,7 +208,7 @@ console.log('{{ range }} is equivalent to ' + toComparators('{{ range }}') + '. 
             Ces scripts sont décrits ici : <a href="https://docs.npmjs.com/misc/scripts">https://docs.npmjs.com/misc/scripts</a>
           </v-alert>
 
-          <v-alert :value="true" color="info" icon="info" outline>
+          <v-alert outlined :value="true" color="info" icon="info" outline>
             Certains modules sont utilisables en ligne de commande. Pour les utiliser :
             <ul>
               <li>si le module est présent dans le dossier <code>node_modules</code>, la commande peut-être appelée dans une balise <code>scripts</code> du package.json ou en utilisant la commande <code>npx</code></li>
@@ -229,8 +229,7 @@ console.log('{{ range }} is equivalent to ' + toComparators('{{ range }}') + '. 
           </p>
         </v-card-text>
       </v-card>
-    </v-flex>
-  </v-layout>
+  </v-container>
 </template>
 
 <script>

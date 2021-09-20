@@ -13,3 +13,6 @@ dist
 
 # nyc/istanbul
 .nyc_output
+
+# eslint
+.eslintcache

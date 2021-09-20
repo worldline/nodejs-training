@@ -1,7 +1,7 @@
 <template>
-  <v-layout column justify-center align-center>
-    <v-flex xs12 sm8 md6>
-      <div class="text-xs-center">
+  <v-container>
+    
+      <div class="text-center">
         <img src="~/assets/nodejs.svg" alt="Node.js" class="mb-5">
       </div>
       <v-card>
@@ -23,8 +23,7 @@
           <p>Ce support sert également pour le déroulement de <b>formations présentielles</b> et certains aspects théoriques mais aussi certains exercices pratiques sont, d’un point de vue pédagogique, plus efficaces s’ils sont accompagnés par des explications d’un formateur. Néanmoins, ce support peut aussi être utilisé en <b>autonomie</b>.</p>
         </v-card-text>
       </v-card>
-    </v-flex>
-  </v-layout>
+  </v-container>
 </template>
 
 <script>

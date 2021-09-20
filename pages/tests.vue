@@ -1,6 +1,6 @@
 <template>
-  <v-layout column justify-center align-center>
-    <v-flex xs12 sm8 md6>
+  <v-container>
+    
       <v-card>
         <v-card-title class="headline primary--text">Les tests</v-card-title>
         <v-card-text>
@@ -90,7 +90,7 @@ describe('Array', () => {
   })
 })</code></pre>
 
-            <v-alert :value="true" color="info" icon="info" outline>
+            <v-alert outlined :value="true" color="info" icon="info" outline>
               Mocha s'exécute en 2 phases:
               <ul>
                 <li>dans un premier temps, il exécute le code des <code>describe</code> et stocke en mémoire tous les tests et les "hooks" qu'il devra exécuter ;</li>
@@ -107,7 +107,7 @@ describe('Array', () => {
               <li>soit avoir installé mocha de manière globale avec <code>npm install -g mocha</code>.</li>
             </ul>
 
-            <v-alert :value="true" color="info" icon="info" outline>
+            <v-alert outlined :value="true" color="info" icon="info" outline>
               Pour accélerer le développement, il est possible d'utiliser la commande <code>mocha -w</code>, qui relance automatiquement les tests dès qu'un fichier .js est modifié.
             </v-alert>
           </p>
@@ -186,6 +186,5 @@ describe('Array#indexOf', () => {
           </p>
         </v-card-text>
       </v-card>
-    </v-flex>
-  </v-layout>
+  </v-container>
 </template>

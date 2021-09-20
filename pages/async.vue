@@ -1,6 +1,6 @@
 <template>
-  <v-layout column justify-center align-center>
-    <v-flex xs12 sm8 md6>
+  <v-container>
+    
       <v-card>
         <v-card-title class="headline primary--text">Les mots clés async / await</v-card-title>
 
@@ -67,7 +67,7 @@ const doHelloTwice = async () => {
 };</code></pre>
           </p>
 
-          <v-alert :value="true" color="info" icon="info" outline>
+          <v-alert outlined :value="true" color="info" icon="info" outline>
             Ces deux nouveaux mot-clés n'ajoutent pas de fonctionnalités par rapport aux promesses, mais permettent avant tout de simplifer le code.
             En effet :
             <ul>
@@ -93,8 +93,7 @@ const doHelloTwice = async () => {
           </p>
         </v-card-text>
       </v-card>
-    </v-flex>
-  </v-layout>
+  </v-container>
 </template>
 
 <script>

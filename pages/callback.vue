@@ -1,6 +1,6 @@
 <template>
-  <v-layout column justify-center align-center>
-    <v-flex xs12 sm8 md6>
+  <v-container>
+    
       <v-card>
         <v-card-title class="headline primary--text">L'asynchronisme avec les callbacks</v-card-title>
 
@@ -15,7 +15,7 @@
               </li>
             </ul>
           </p>
-          <v-alert :value="true" color="error" icon="warning" outline>
+          <v-alert outlined :value="true" color="error" icon="warning" outline>
             Il est important de ne pas bloquer le thread trop longtemps pour ne pas impacter les autres requêtes.
           </v-alert>
 
@@ -33,7 +33,7 @@
             A la fin de l'opération I/O, Node.js (<code>libuv</code> plus précisément) placera le callback dans un liste d'attente, qui sera dépilée et exécutée lorsque le thread sera disponible
             (les instructions en cours d'exécution ne sont pas interrompues).
 
-            <v-alert :value="true" color="info" icon="info" outline>
+            <v-alert outlined :value="true" color="info" icon="info" outline>
               Node.js propose également des fonctions synchrones pour effectuer des opérations I/O : il ne faut pas les utiliser afin de ne pas dégrader les performances.<br>
               Il existe cependant quelques rares cas où il peut être nécessaire de les utiliser (par exemple au démarrage de l'application).
             </v-alert>
@@ -151,8 +151,7 @@ console.log('fin du fichier');
           </p>
         </v-card-text>
       </v-card>
-    </v-flex>
-  </v-layout>
+  </v-container>
 </template>
 
 <script>

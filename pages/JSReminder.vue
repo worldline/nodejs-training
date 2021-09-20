@@ -1,6 +1,5 @@
 <template>
-  <v-layout column justify-center align-center>
-    <v-flex xs12 sm8 md6>
+  <v-container>
       <v-flex xs12>
         <v-card>
           <v-card-title class="headline primary--text">Rappel JavaScript</v-card-title>
@@ -45,7 +44,7 @@
   x = "John";      // Ici x est un String
             </code>
           </pre>
-          <p class="subheading primary--text">Les types de données</p>
+          <p class="subtitle-1 primary--text">Les types de données</p>
           <p>Le dernier standard ECMAScript définit 7 types de données :</p>
           <ul>
             <li>Les types de données primitifs : <i>Boolean</i>, <i>Null</i>, <i>Undefined</i>, <i>Number</i>, <i>String</i> et <i>Symbol</i> ;</li>
@@ -79,11 +78,11 @@
             </code>
           </pre>
           <p>Ces classes sont typées comme des <code>Object</code>, elles héritent des méthodes comme : <code>toString</code>, <code>valueOf</code>, <code>hashCode</code>.</p>
-          <v-alert :value="true" color="info" icon="info" outline>
+          <v-alert outlined :value="true" color="info" icon="info" outline>
             La liste complète de ces "objets globaux" est disponible sur la documentation du langage, voir <a target="_blank" href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux">Mozilla Developer Network - Objets globaux</a>
           </v-alert>
           <br>
-          <p class="subheading primary--text">Les variables</p>
+          <p class="subtitle-1 primary--text">Les variables</p>
           <p>Il existe trois mots clés en JavaScript pour déclarer une variable : <code>var</code>, <code>let</code> et <code>const</code>.</p>
           <ul>
             <li>
@@ -104,7 +103,7 @@
   }
                 </code>
               </pre>
-              <v-alert :value="true" color="warning" icon="warning" outline>
+              <v-alert outlined :value="true" color="warning" icon="warning" outline>
                 <code>const</code> définit une constante au niveau de la référence uniquement, il est possible de modifier le contenu d'un tableau ou d'un objet :
                 <pre v-highlightjs>
                   <code class="javascript">
@@ -145,7 +144,7 @@
   }
                 </code>
               </pre>
-              <v-alert :value="true" color="warning" icon="warning" outline>
+              <v-alert outlined :value="true" color="warning" icon="warning" outline>
                 Le scope au niveau de la fonction et le mécanisme de hoisting ne sont pas naturels, nous vous conseillons d'utiliser <code>const</code> et <code>let</code> dans 99.9% des cas !
               </v-alert>
             </li>
@@ -166,7 +165,7 @@
             </code>
           </pre>
           <p>Le nombre d'arguments d'une fonction est dynamique, <code>arguments</code> est un pseudo-tableau contenant les paramètres effectifs au moment de l'appel.</p>
-          <v-alert :value="true" color="info" icon="info" outline>
+          <v-alert outlined :value="true" color="info" icon="info" outline>
             En ES6, il est préférable d'utiliser la syntaxe <a target="_blank" href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Fonctions/param%C3%A8tres_du_reste">Mozilla Developer Network - Rest parameters</a> qui permet de représenter un nombre indéfini d'arguments sous forme de tableau : <code class="javascript">function sum(...theArgs) {}</code>
           </v-alert>
           <p>En JavaScript, par défaut, la valeur des paramètres d'une fonction sera undefined. Malgré tout, il peut être assez utile de pouvoir définir d'autres valeurs par défaut.</p>
@@ -189,7 +188,7 @@
             </code>
           </pre>
           <p>Cette syntaxe permet de passer une fonction comme argument d'une autre fonction ou de définir une fonction de manière conditionnelle.</p>
-          <p class="subheading primary--text">Les fonctions fléchées</p>
+          <p class="subtitle-1 primary--text">Les fonctions fléchées</p>
           <p>Une <b>expression de fonction fléchée</b> (<i>arrow function</i> en anglais) permet d’avoir une syntaxe plus courte que les expressions de fonction et ne possède pas ses propres valeurs pour <code>this</code>, <code>arguments</code>, <code>super</code>, ou <code>new.target</code>. Les fonctions fléchées sont souvent anonymes et ne sont pas destinées à être utilisées pour déclarer des méthodes.</p>
           <pre v-highlightjs>
             <code class="javascript">
@@ -202,7 +201,7 @@
   console.log(sum(2, 3)); // => 5
             </code>
           </pre>
-          <p class="subheading primary--text">Fonction et portée</p>
+          <p class="subtitle-1 primary--text">Fonction et portée</p>
           <pre v-highlightjs>
             <code class="javascript">
   const animal = (nom) => {  // La fonction externe utilise un paramètre "nom"
@@ -218,7 +217,7 @@
             </code>
           </pre>
           <p>La fonction interne est disponible en dehors de la fonction parente, c'est ce qu'on appelle une <a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Guide/Fonctions#Fermetures_(closures)">fermeture</a> (<i>closure</i>).</p><br>
-          <v-alert :value="true" color="info" icon="info" outline>
+          <v-alert outlined :value="true" color="info" icon="info" outline>
             Pour aller plus loin, voir <a target="_blank" href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Guide/Fonctions">Mozilla Developer Network - Fonctions</a>
           </v-alert>
         </v-card-text>
@@ -228,7 +227,7 @@
         <v-card-text>
           <p>JavaScript propose plusieurs <b>structures itératives</b> sur les tableaux et les objets.</p>
           <br>
-          <p class="subheading primary--text">Parcourir un tableau</p>
+          <p class="subtitle-1 primary--text">Parcourir un tableau</p>
           <pre v-highlightjs>
             <code class="javascript">
   // le for "classique" pour les tableaux
@@ -257,7 +256,7 @@
   console.log(evenNumbers); // [2, 4]
             </code>
           </pre>
-          <p class="subheading primary--text">Parcourir un objet</p>
+          <p class="subtitle-1 primary--text">Parcourir un objet</p>
           <pre v-highlightjs>
             <code class="javascript">
   // le for in pour les objets
@@ -288,7 +287,7 @@
   }
             </code>
           </pre>
-          <v-alert :value="true" color="info" icon="info" outline>
+          <v-alert outlined :value="true" color="info" icon="info" outline>
             D'autres opérations sont possibles sur les objets et les tableaux, voir Mozilla Developer Network - <a target="_blank" href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Object">Object</a>, <a target="_blank" href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Array">Array</a>
           </v-alert>
         </v-card-text>
@@ -297,7 +296,7 @@
         <v-card-title class="title primary--text">Structures conditionnelles</v-card-title>
         <v-card-text>
           <p>Comme beaucoup de langages inspirés du C, JavaScript utilise le <a target="_blank" href="https://en.wikipedia.org/wiki/Short-circuit_evaluation">short-circuit evaluation</a> pour les conditions : </p>
-          <p class="subheading primary--text">L'égalité</p>
+          <p class="subtitle-1 primary--text">L'égalité</p>
           <p>
             JavaScript propose deux types de comparaison : <br>
             <ul>
@@ -318,11 +317,11 @@ console.log(`0 == false vaut ${0 == false}`);
 console.log(`0 === false vaut ${0 === false}`);
           </runkit-embedded>
           <!-- eslint-enable -->
-          <v-alert :value="true" color="info" icon="info" outline>
+          <v-alert outlined :value="true" color="info" icon="info" outline>
             Nous vous recommandons de toujours utiliser l'égalité stricte <code>===</code> !
           </v-alert>
           <br>
-          <p class="subheading primary--text">Les valeurs fausses (falsy)</p>
+          <p class="subtitle-1 primary--text">Les valeurs fausses (falsy)</p>
           <p>
             Les valeurs fausses (<a href="https://developer.mozilla.org/fr/docs/Glossaire/Falsy">falsy</a>) sont des valeurs évaluées comme fausses quand elles sont évaluées dans un contexte booléen.<br>
             <ul>
@@ -333,7 +332,7 @@ console.log(`0 === false vaut ${0 === false}`);
             </ul>
           </p>
           <br>
-          <p class="subheading primary--text">Le if / else</p>
+          <p class="subtitle-1 primary--text">Le if / else</p>
           <pre v-highlightjs>
             <code class="javascript">
   if(name === 'John') {
@@ -345,7 +344,7 @@ console.log(`0 === false vaut ${0 === false}`);
   }
             </code>
           </pre>
-          <p class="subheading primary--text">Le switch case</p>
+          <p class="subtitle-1 primary--text">Le switch case</p>
           <pre v-highlightjs>
             <code class="javascript">
   switch (foo()) {
@@ -358,7 +357,7 @@ console.log(`0 === false vaut ${0 === false}`);
   }
             </code>
           </pre>
-          <p class="subheading primary--text">L'opérateur ternaire</p>
+          <p class="subtitle-1 primary--text">L'opérateur ternaire</p>
           <p>L'opérateur ternaire est utilisable dans une expression à la différence du <code>if else</code> qui est une instruction.</p>
           <pre v-highlightjs>
             <code class="javascript">
@@ -410,11 +409,11 @@ console.log(`0 === false vaut ${0 === false}`);
 
             </code>
           </pre>
-          <v-alert :value="true" color="info" icon="info" outline>
+          <v-alert outlined :value="true" color="info" icon="info" outline>
             Il est également possible de définir des propriétés de classe et de déclarer des champs privés et publiques (fonctionalité expérimentale). Plus d'information sur <a target="_blank" href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Classes">Mozilla Developer Network - Classes</a>
           </v-alert>
 
-          <p class="subheading primary--text">L'héritage de classe</p>
+          <p class="subtitle-1 primary--text">L'héritage de classe</p>
           <p>Le mot-clé <code>extends</code>, utilisé dans les déclarations ou les expressions de classes, permet de créer une classe qui hérite d'une autre classe (on parle aussi de "sous-classe" ou de "classe-fille").</p>
           <pre v-highlightjs>
             <code class="javascript">
@@ -445,7 +444,7 @@ console.log(`0 === false vaut ${0 === false}`);
         <v-card-text>
           <p>la spécification ES6 (ou ES2015) a apporté de nombreuses fonctionalités au langage.</p>
 
-          <p class="subheading primary--text">Littéraux de gabarits</p>
+          <p class="subtitle-1 primary--text">Littéraux de gabarits</p>
           <p>Les littéraux de gabarits <code>` `</code> sont des littéraux de chaînes de caractères permettant d'intégrer des expressions. Avec eux, on peut utiliser des chaînes de caractères multi-lignes et des fonctionnalités d'interpolation.</p>
           <pre v-highlightjs>
             <code class="javascript">
@@ -457,12 +456,12 @@ console.log(`0 === false vaut ${0 === false}`);
   // 15."
             </code>
           </pre>
-          <v-alert :value="true" color="info" icon="info" outline>
+          <v-alert outlined :value="true" color="info" icon="info" outline>
             Il est également possible d'imbriquer des gabarits pour obtenir des chaînes de caractères configurables. Plus d'information sur <a target="_blank" href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Litt%C3%A9raux_gabarits">Mozilla Developer Network - Littéraux de gabarits</a>
           </v-alert>
 
           <br>
-          <p class="subheading primary--text">Syntaxe de décomposition</p>
+          <p class="subtitle-1 primary--text">Syntaxe de décomposition</p>
           <p>La <b>syntaxe de décomposition</b> <code>...</code> (<i>spread operator</i> en anglais) permet d'étendre un itérable (par exemple une expression de tableau ou une chaîne de caractères) en lieu et place de plusieurs arguments (pour les appels de fonctions) ou de plusieurs éléments (pour les littéraux de tableaux) ou de paires clés-valeurs (pour les littéraux d'objets).</p>
           <pre v-highlightjs>
             <code class="javascript">
@@ -479,12 +478,12 @@ console.log(`0 === false vaut ${0 === false}`);
   arr = [...arr, ...arr2];
             </code>
           </pre>
-          <v-alert :value="true" color="info" icon="info" outline>
+          <v-alert outlined :value="true" color="info" icon="info" outline>
             La proposition relative à la décomposition des propriétés (actuellement au stade de <a href="https://github.com/tc39/proposal-object-rest-spread">proposition de niveau 4</a>) vise à ajouter la décomposition des propriétés pour les littéraux objets. Plus d'information sur <a target="_blank" href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Op%C3%A9rateurs/Syntaxe_d%C3%A9composition">Mozilla Developer Network - Syntaxe de décomposition</a>
           </v-alert>
 
           <br>
-          <p class="subheading primary--text">Affectation par décomposition</p>
+          <p class="subtitle-1 primary--text">Affectation par décomposition</p>
           <p>L'<b>affectation par décomposition</b> (<i>destructuring</i> en anglais) est une expression JavaScript qui permet d'extraire (<i>unpack</i> en anglais) des données d'un tableau ou d'un objet grâce à une syntaxe dont la forme ressemble à la structure du tableau ou de l'objet.</p>
           <pre v-highlightjs>
             <code class="javascript">
@@ -502,25 +501,24 @@ var {a, b} = null;
 console.log(a); // "TypeError: Cannot destructure property `a` of 'undefined' or 'null'.
             </code>
           </pre>
-          <v-alert :value="true" color="info" icon="info" outline>
+          <v-alert outlined :value="true" color="info" icon="info" outline>
             Plus d'information et d'exemples sont disponibles sur <a target="_blank" href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Op%C3%A9rateurs/Affecter_par_d%C3%A9composition">Mozilla Developer Network - Affecter par décomposition</a>
           </v-alert>
         </v-card-text>
       </v-card>
-      <v-card>
-        <v-card-title class="title primary--text">Hands on!</v-card-title>
-        <v-card-text>
-          <ol>
-            <li>Créez un tableau <code>days</code> contenant les jours de la semaine, et faites un extrait des jours ouvrés dans une variable <code>workingDays</code></li>
-            <li>Affichez <code>days</code> <code>workingDays</code> et le troisième jour ouvré dans la console</li>
-            <li>Créez une bière avec comme nom <b>Brewdog Punk Ipa</b> et 10 unités</li>
-            <li>Créez une function <code>drink</code> qui accepte une bière et un nombre en paramètres. Elle décrémente le nombre d'unité de bière et renvoie une chaine avec le nom et le nombre de bières bues</li>
-            <li>Créez une function <code>doMove</code> qui accepte une function, une bière et un nombre en paramètres. Elle renvoie une chaine avec la date courante et le résultat de la fonction sur les paramètres restants. Affichez le résultat de l'action de boire 2 bières</li>
-          </ol>
-        </v-card-text>
-      </v-card>
-    </v-flex>
-  </v-layout>
+    <v-card>
+      <v-card-title class="title primary--text">Hands on!</v-card-title>
+      <v-card-text>
+        <ol>
+          <li>Créez un tableau <code>days</code> contenant les jours de la semaine, et faites un extrait des jours ouvrés dans une variable <code>workingDays</code></li>
+          <li>Affichez <code>days</code> <code>workingDays</code> et le troisième jour ouvré dans la console</li>
+          <li>Créez une bière avec comme nom <b>Brewdog Punk Ipa</b> et 10 unités</li>
+          <li>Créez une function <code>drink</code> qui accepte une bière et un nombre en paramètres. Elle décrémente le nombre d'unité de bière et renvoie une chaine avec le nom et le nombre de bières bues</li>
+          <li>Créez une function <code>doMove</code> qui accepte une function, une bière et un nombre en paramètres. Elle renvoie une chaine avec la date courante et le résultat de la fonction sur les paramètres restants. Affichez le résultat de l'action de boire 2 bières</li>
+        </ol>
+      </v-card-text>
+    </v-card>
+  </v-container>
 </template>
 
 <script>

@@ -1,6 +1,6 @@
 <template>
-  <v-layout column justify-center align-center>
-    <v-flex xs12 sm8 md6>
+  <v-container>
+    
       <v-card>
         <v-card-title class="headline primary--text">Annexe : Librairies utiles</v-card-title>
         <v-card-text>
@@ -30,7 +30,7 @@ _.set(a, 'b.c[3].d.e', 'e');
             </runkit-embedded>
             <!-- eslint-enable -->
             <br>
-            <v-alert :value="true" color="warning" icon="warning" outline>
+            <v-alert outlined :value="true" color="warning" icon="warning" outline>
               Les versions récentes de JavaScript permettent de limiter l'usage de lodash. Pour plus d'information <a href="https://github.com/you-dont-need/You-Dont-Need-Lodash-Underscore">You don't need lodash</a>
             </v-alert>
           </p>
@@ -162,13 +162,12 @@ mock.verify();
           </pre>
           <br>
 
-          <v-alert :value="true" color="info" icon="info" outline>
+          <v-alert outlined :value="true" color="info" icon="info" outline>
             <code>Sinon</code> apporte également d'autres fonctionnalités comme les <code>stubs</code>, <code>spies</code>, <code>spy calls</code>, <code>fake timers</code>, pour plus d'informations voir la <a href="https://sinonjs.org/releases/v7.3.1/">documentation officielle</a>.
           </v-alert>
         </v-card-text>
       </v-card>
-    </v-flex>
-  </v-layout>
+  </v-container>
 </template>
 
 <script>

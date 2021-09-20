@@ -1,6 +1,6 @@
 <template>
-  <v-layout column justify-center align-center>
-    <v-flex xs12 sm8 md6>
+  <v-container>
+    
       <v-card>
         <v-card-title class="headline primary--text">Les modules</v-card-title>
         <v-card-text>
@@ -12,7 +12,7 @@
               <li>un module peut exporter une ou plusieurs variables ;</li>
               <li>un module peut importer les variables d'autres modules (si elles sont exportées).</li>
             </ul>
-            <v-alert :value="true" color="info" icon="info" outline>
+            <v-alert outlined :value="true" color="info" icon="info" outline>
               Il existe plusieurs manières de gérer les modules en JavaScript :
               <ul>
                 <li>CommonJS : utilisé par les versions actuelles de Node.js ;</li>
@@ -94,7 +94,7 @@ const Vuetify = require('vuetify/lib');
           </p>
 
           <p>
-            <v-alert :value="true" color="info" icon="info" outline>
+            <v-alert outlined :value="true" color="info" icon="info" outline>
               A noter, <code>require()</code> a un cache, c'est à dire que chaque fichier n'est chargé qu'une seule fois (et donc executé qu'une seule fois).<br>
               Ainsi, le code à l'intérieur d'un module peut servir pour initialiser le module (chargement de la configuration par exemple),
               car il ne sera executé qu'une fois (souvent au démarrage de l'application).
@@ -127,6 +127,5 @@ const Vuetify = require('vuetify/lib');
           </p>
         </v-card-text>
       </v-card>
-    </v-flex>
-  </v-layout>
+  </v-container>
 </template>

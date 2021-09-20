@@ -1,6 +1,6 @@
 <template>
-  <v-layout column justify-center align-center>
-    <v-flex xs12 sm8 md6>
+  <v-container>
+    
       <v-card>
         <v-card-title class="headline primary--text">Gérer la configuration</v-card-title>
         <v-card-text>
@@ -37,7 +37,7 @@ console.log(config[env]);
               <li>de surcharger certaines valeurs grâce aux variables d'environnement, e.g. <code>config/custom-environment-variables.json</code>.</li>
             </ul><br>
 
-            <v-alert :value="true" color="info" icon="info" outline>
+            <v-alert outlined :value="true" color="info" icon="info" outline>
               <code>node-config</code> gère également les fichiers <code>.yaml</code>, <code>.js</code>, <code>.coffee</code>
             </v-alert>
             <br>
@@ -55,8 +55,7 @@ console.log(config[env]);
           </p>
         </v-card-text>
       </v-card>
-    </v-flex>
-  </v-layout>
+  </v-container>
 </template>
 
 <script>
