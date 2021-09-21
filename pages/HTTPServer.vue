@@ -11,7 +11,7 @@
 
             <pre v-highlightjs>
               <code language="js">
-const http = require('http');
+import { createServer } from 'http';
 
 http.createServer(function (req, res) {
   res.write('Hello World!');
@@ -46,7 +46,7 @@ http.createServer(function (req, res) {
 
             <v-card-title class="subheading primary--text">Anatomie du serveur</v-card-title>
             <pre v-highlightjs><code language="js">
-const express = require('express');
+import express from 'express';
 const app = express();
 
 app.get('/hello/:name', (req, res) => {

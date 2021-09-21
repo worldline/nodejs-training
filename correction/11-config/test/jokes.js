@@ -1,9 +1,9 @@
-const chai = require('chai');
-const chaiAsPromised = require('chai-as-promised');
+import chai from 'chai';
+import chaiAsPromised from 'chai-as-promised';
 const { expect } = chai;
 chai.use(chaiAsPromised);
-const nock = require('nock');
-const { getJoke } = require('../app/jokes');
+import nock from 'nock';
+import { getJoke } from '../app/jokes.js';
 
 describe('Jokes', () => {
   afterEach(() => {

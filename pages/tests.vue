@@ -18,7 +18,7 @@
             Pour définir un test, il suffit d'utiliser la fonction <code>it()</code>. <code>describe()</code> permet de créer des groupes et sous-groupes de tests :
 
             <pre v-highlightjs><code language="javascript">
-const assert = require('assert');
+import assert from 'assert';
 // describe() est une fonction qui définit un "groupe" de tests
 describe('Array#indexOf', () => {
   // it() est une fonction qui définit un test (pas d'inclusion)
@@ -37,7 +37,7 @@ describe('Array#indexOf', () => {
             Dans l'exemple ci-dessus :
             <ul>
               <li><code>assert</code> est un module qui fait parti du coeur de Node.js (ci-dessous, nous présenterons la librairie <code>chai</code> qui est fonctionnellement plus riche) ;</li>
-              <li><code>describe()</code> et <code>it()</code> sont des fonctions globales qui sont définies par mocha (il n'y a donc pas besoin d'utiliser <code>require</code> pour importer mocha) ;</li>
+              <li><code>describe()</code> et <code>it()</code> sont des fonctions globales qui sont définies par mocha (il n'y a donc pas besoin d'utiliser <code>require</code> ou <code>import</code> pour importer mocha) ;</li>
               <li>l'intérêt d'utiliser la syntaxe BDD est qu'elle permet de faire des phrases expliquant le cas de test (ex : "it should return -1 when the value is not present")</li>
             </ul>
           </p>
@@ -46,9 +46,9 @@ describe('Array#indexOf', () => {
             Il possible de tester une fonction asynchrone. Pour cela, il suffit de rajouter un callback comme paramètre de la fonction, et de l'appeler une fois que toutes les assertions ont été exécutées :
 
             <pre v-highlightjs><code language="javascript">
-const assert = require('assert');
-const fs = require('fs');
-const path = require('path');
+import assert from 'assert';
+import fs from 'fs';
+import path from 'path';
 // describe() est une fonction qui définit un "groupe" de tests
 describe('fs#stat', () => {
   // it() est une fonction qui définit un test (pas d'inclusion)
@@ -112,13 +112,13 @@ describe('Array', () => {
             </v-alert>
           </p>
 
-          <v-card-title class="subheading primary--text">Calculer la couverture de code avec Istanbul/NYC</v-card-title>
+          <v-card-title class="subheading primary--text">Calculer la couverture de code avec c8</v-card-title>
           <p>
-            <a href="https://istanbul.js.org/">NYC/Istanbul</a> est un outil permettant de calculer la couverture de code.
+            <a href="https://www.npmjs.com/package/c8">c8</a> est un outil permettant de calculer la couverture de code.
             Pour cela, il faut :
             <ul>
-              <li>installer <code>nyc</code> (comme <code>devDependencies</code> ou de manière globale)</li>
-              <li>préfixer la commande <code>mocha</code> par <code>nyc</code> (ex: <code>nyc mocha</code>)</li>
+              <li>installer <code>c8</code> (comme <code>devDependencies</code> ou de manière globale)</li>
+              <li>préfixer la commande <code>mocha</code> par <code>c8</code> (ex: <code>c8 mocha</code>)</li>
             </ul>
           </p>
 
@@ -128,7 +128,7 @@ describe('Array', () => {
             Tout comme mocha, chai propose plusieurs syntaxes : nous utiliserons <a href="https://www.chaijs.com/api/bdd/">expect</a>.
             <pre v-highlightjs><code language="javascript">
 // notez l'inclusion de chai
-const expect = require('chai').expect;
+import { expect } from 'chai';
 
 describe('Array#indexOf', () => {
   it('should return -1 when the value is not present', (done) => {

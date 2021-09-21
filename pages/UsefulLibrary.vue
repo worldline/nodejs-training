@@ -142,11 +142,11 @@ utils.sayGoodMorning('Yann');
           Par exemple, si l'on souhaite s'assurer que la méthode <code>smsManager.sendTo</code> est bien appelée deux fois dans la fonction <code>api()</code> :
           <pre v-highlightjs>
             <code class="javascript">
-const sinon = require('sinon');
+import sinon from 'sinon';
 
 const api() => {
-smsManager.sendTo('Yann', 'Yo!');
-smsManager.sendTo('Quentin', 'Yo!');
+  smsManager.sendTo('Yann', 'Yo!');
+  smsManager.sendTo('Quentin', 'Yo!');
 };
 
 // On utilise un mock sur l'objet "smsManager"

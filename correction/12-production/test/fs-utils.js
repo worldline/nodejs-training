@@ -1,11 +1,14 @@
-const fs = require('fs');
-const { join } = require('path');
-const chai = require('chai');
+import fs from 'fs';
+import { join, dirname } from 'path';
+import { fileURLToPath } from 'url';
+import chai from 'chai';
 const { expect } = chai;
-const chaiAsPromised = require('chai-as-promised');
+import chaiAsPromised from 'chai-as-promised';
 chai.use(chaiAsPromised);
-const sinon = require('sinon');
-const { getDirContent, getDirStat } = require('../app/fs-utils');
+import sinon from 'sinon';
+import { getDirContent, getDirStat } from '../app/fs-utils.js';
+
+const __dirname = dirname(fileURLToPath(import.meta.url));
 
 describe('FS utils', () => {
   describe('getDirContent()', () => {

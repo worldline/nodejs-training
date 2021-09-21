@@ -11,8 +11,9 @@ npm-debug.log
 public
 dist
 
-# nyc/istanbul
+# nyc/istanbul/c8
 .nyc_output
+coverage/
 
 # eslint
 .eslintcache

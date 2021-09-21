@@ -17,7 +17,8 @@
           <p>
             Pour créer un logger, il faut utiliser la méthode <code>createLogger()</code> comme dans l'exemple ci-dessous :
             <pre v-highlightjs><code language="js">
-const { createLogger, format, transports } = require('winston');
+import winston from 'winston';
+const { createLogger, format, transports } = winston;
 const { combine, splat, json } = format;
 
 const logger = createLogger({

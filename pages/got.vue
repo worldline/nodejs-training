@@ -19,7 +19,7 @@
 
           <p>
             Pour faire une requête GET, il suffit de passer l'URL en premier paramètre de <code>got</code>
-            <pre v-highlightjs><code language="js">const got = require('got');
+            <pre v-highlightjs><code language="js">import got from 'got';
 
 const { body } = await got('http://www.google.com');</code></pre>
             <br>

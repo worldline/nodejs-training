@@ -1,6 +1,5 @@
 <template>
   <v-container>
-    
       <v-card>
         <v-card-title class="headline primary--text">Les modules</v-card-title>
         <v-card-text>
@@ -20,9 +19,76 @@
                 <li>RequireJS : non supporté par Node.js.</li>
               </ul>
             </v-alert>
+            <v-alert outlined :value="true" color="warning" icon="warning" outline>
+              Il n'est possible pas possible d'utiliser les 2 notations au sein d'un module.
+            </v-alert>
+          </p>
+          
+          <v-card-title class="subheading primary--text">La syntaxe ES6 (recommandée sur les nouveaux projets)</v-card-title>
+          <v-card-title class="subtitle-1 primary--text">Prérequis</v-card-title>
+          <p>
+            Pour que Node.js utilise la syntaxe ES6, il faut :
+            <ul>
+              <li>soit ajouter <code>"type" = "module"</code> dans le <code>package.json</code></li>
+              <li>soit que le fichier ait l'extension <code>.mjs</code></li>
+            </ul>
+          </p>
+          <v-card-title class="subtitle-1 primary--text">Comment exporter une variable ?</v-card-title>
+          <p>
+            Pour exporter une variable, il suffit d'ajouter le mot clé <code>export</code>.
+            <pre v-highlightjs><code language="js">
+// fichier say-hello.js
+export let helloCount = 0;
+
+export const sayHello = (name) => {
+  helloCount ++;
+  console.log(`hello ${name}`);
+};
+            </code></pre>
+          </p>
+          <p>
+            Il est également possible d'exporter un unique objet en définissant la variable <code>module.exports</code>
+            <pre v-highlightjs><code language="js">
+// fichier say-goodbye.js
+export default (name) => {
+  console.log(`Good Bye ${name}`);
+};
+            </code></pre>
           </p>
 
-          <v-card-title class="subheading primary--text">Comment exporter une variable ?</v-card-title>
+          <v-card-title class="subtitle-1 primary--text">Comment importer un module ?</v-card-title>
+          <p>
+            Pour importer un module, il faut utiliser les mots clés <code>import</code> et <code>from</code>.
+            <pre v-highlightjs><code language="js">
+import * as sayHelloModule from './say-hello.js';
+import { sayHello } from './say-hello.js';
+import sayGoodbye from './say-goodbye.js';
+
+sayHello('Sylvain');
+sayHelloModule.sayHello('Patrick');
+sayGoodbye('Julien');
+            </code></pre>
+          </p>
+          <p>
+            Le mot clé <code>import</code> va chercher :
+            <ul>
+              <li>un module "core", c'est à dire un module inclus par défaut dans Node.js (ils sont documentés sur le site de <a href="https://nodejs.org/api/">Node.js</a> : <code>path</code>, <code>http</code>...) ;</li>
+              <li>un fichier local si le paramètre est un chemin (i.e. commence par <code>./</code>, <code>../</code> ou <code>/</code>) ;</li>
+              <li>une librairie présente dans le dossier <code>node_modules</code> dans le dossier courant ou dans un dossier ascendant (par récursivité).</li>
+            </ul>
+            Il existe une méthode <code>import('monmodule')</code> qui permet de charger de manière dynamique une méthode (par exemple à l'intérieur d'une fonction). Cette méthode retourne une promesse.
+          </p>
+
+          <p>
+            <v-alert outlined :value="true" color="info" icon="info" outline>
+              A noter, les modules ES6 utilisent un cache, c'est à dire que chaque fichier n'est chargé qu'une seule fois (et donc executé qu'une seule fois).<br>
+              Ainsi, le code à l'intérieur d'un module peut servir pour initialiser le module (chargement de la configuration par exemple),
+              car il ne sera executé qu'une fois (souvent au démarrage de l'application).
+            </v-alert>
+          </p>
+
+          <v-card-title class="subheading primary--text">La syntaxe CommonJS</v-card-title>
+          <v-card-title class="subtitle-1 primary--text">Comment exporter une variable ?</v-card-title>
           <p>
             Pour exporter une variable, il suffit d'ajouter un attribut à <code>exports</code>.
             <pre v-highlightjs><code language="js">
@@ -47,7 +113,7 @@ module.exports = (name) => {
             </code></pre>
           </p>
 
-          <v-card-title class="subheading primary--text">Comment importer un module ?</v-card-title>
+          <v-card-title class="subtitle-1 primary--text">Comment importer un module ?</v-card-title>
           <p>
             Pour importer un module, il faut utiliser la fonction <code>require()</code>.
             <pre v-highlightjs><code language="js">
@@ -106,10 +172,11 @@ const Vuetify = require('vuetify/lib');
           <p>
             Des objets globaux sont disponibles dans tous les modules (sans qu'il soit nécessaire de les importer). Il y a notamment :
             <ul>
-              <li><code>__dirname</code> qui est une chaîne de caractères qui correspond au chemin absolu du dossier dans lequel se situe le module ;</li>
-              <li><code>__filename</code> qui est une chaîne de caractères qui correspond au chemin absolu du module ;</li>
+              <li>(uniquement en CommonJS) <code>__dirname</code> qui est une chaîne de caractères qui correspond au chemin absolu du dossier dans lequel se situe le module ;</li>
+              <li>(uniquement en CommonJS) <code>__filename</code> qui est une chaîne de caractères qui correspond au chemin absolu du module ;</li>
+              <li>(uniquement en ES6) <code>import</code> qui expose les <a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Statements/import.meta">données du module courant</a> (par exemple <code>import.meta.url</code> est l'URL du module courant) ;</li>
               <li><code>console</code> ;</li>
-              <li><code>exports</code>, <code>module</code> et <code>require</code> ;</li>
+              <li>(uniquement en CommonJS) <code>exports</code>, <code>module</code> et <code>require</code> ;</li>
               <li><code>setTimeout</code>, <code>setInterval</code>, <code>setImmediate</code>, <code>clearTimeout</code>, <code>clearInterval</code> et <code>clearImmediate</code> ;</li>
               <li><code>process</code> qui représente le processus en cours d'exécution : variables d'environnement, pid... (<a href="https://nodejs.org/api/process.html#process_process">plus d'infos</a>) ;</li>
               <li>et plus encore : <a href="https://nodejs.org/api/globals.html">https://nodejs.org/api/globals.html</a>.</li>

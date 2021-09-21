@@ -3,9 +3,10 @@
   "version": "1.0.0",
   "description": "HTTP file server",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "start": "node index.js",
-    "test": "nyc --all --include 'app/**/*.js' mocha",
+    "test": "c8 -r text -r html --include 'app/**/*.js' mocha",
     "watch": "mocha -w"
   },
   "author": "",
@@ -14,8 +15,8 @@
     "express": "^4.17.1"
   },
   "devDependencies": {
+    "c8": "^7.9.0",
     "chai": "^4.3.4",
-    "mocha": "^9.1.1",
-    "nyc": "^15.1.0"
+    "mocha": "^9.1.1"
   }
 }
