@@ -1,6 +1,6 @@
 <template>
-  <v-layout column justify-center align-center>
-    <v-flex xs12 sm8 md6>
+  <v-container>
+    
       <v-card>
         <v-card-title class="headline primary--text">La gestion des évènements</v-card-title>
         <v-flex xs2>
@@ -44,7 +44,7 @@ myEmitter.emit('event');
             <!-- eslint-enable -->
 
             <br>
-            <v-alert :value="true" color="warning" icon="warning" outline>
+            <v-alert outlined :value="true" color="warning" icon="warning" outline>
               <ul>
                 <li>Il est <b>impératif</b> de désinscrire les auditeurs !</li>
                 <li>Si l'évènement <code>error</code> est émis et non écouté, il se transforme en <b>exception</b> !</li>
@@ -69,8 +69,7 @@ myEmitter.emit('error', new Error('whoops!'));
           </p>
         </v-card-text>
       </v-card>
-    </v-flex>
-  </v-layout>
+  </v-container>
 </template>
 
 <script>

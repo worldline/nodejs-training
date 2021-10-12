@@ -7,7 +7,8 @@ export default {
   mounted () {
     window.RunKit.createNotebook({
       element: this.$el,
-      source: this.$slots.default[0].text
+      source: this.$slots.default[0].text,
+      nodeVersion: 'lts'
     })
   }
 }

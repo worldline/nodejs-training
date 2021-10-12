@@ -1,6 +1,6 @@
 <template>
-  <v-layout column justify-center align-center>
-    <v-flex xs12 sm8 md6>
+  <v-container>
+    
       <v-card>
         <v-card-title class="headline primary--text">Les streams</v-card-title>
 
@@ -71,8 +71,7 @@
           </p>
         </v-card-text>
       </v-card>
-    </v-flex>
-  </v-layout>
+  </v-container>
 </template>
 
 <script>

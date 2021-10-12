@@ -1,6 +1,6 @@
 <template>
-  <v-layout column justify-center align-center>
-    <v-flex xs12 sm8 md6>
+  <v-container>
+    
       <v-card>
         <v-card-title class="headline primary--text">Comment fonctionne l'asynchronisme en Node.js ?</v-card-title>
 
@@ -66,7 +66,7 @@
 </pre>
           </p>
 
-          <v-alert :value="true" color="info" icon="info" outline>
+          <v-alert outlined :value="true" color="info" icon="info" outline>
             De ce fonctionnement, il faut retenir que :
             <ul>
               <li>le code JavaScript en cours d'exécution ne sera jamais interrompu par un callback ;</li>
@@ -87,8 +87,7 @@
           </p>
         </v-card-text>
       </v-card>
-    </v-flex>
-  </v-layout>
+  </v-container>
 </template>
 
 <script>

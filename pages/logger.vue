@@ -1,6 +1,6 @@
 <template>
-  <v-layout column justify-center align-center>
-    <v-flex xs12 sm8 md6>
+  <v-container>
+    
       <v-card>
         <v-card-title class="headline primary--text">Logging</v-card-title>
 
@@ -32,7 +32,7 @@ logger.info('Hello %s !', 'World');</code></pre>
             <code>{"level":"info","message":"Hello World !"}</code>
           </p>
 
-          <v-alert :value="true" color="info" icon="info" outline>
+          <v-alert outlined :value="true" color="info" icon="info" outline>
             La méthodologie <a href="https://12factor.net/fr/logs">twelve-factor</a> recommande de logguer sur la sortie standard.
           </v-alert>
         </v-card-text>
@@ -48,8 +48,7 @@ logger.info('Hello %s !', 'World');</code></pre>
           </p>
         </v-card-text>
       </v-card>
-    </v-flex>
-  </v-layout>
+  </v-container>
 </template>
 
 <script>

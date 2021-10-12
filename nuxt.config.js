@@ -1,6 +1,5 @@
-const nodeExternals = require('webpack-node-externals')
-const VuetifyLoaderPlugin = require('vuetify-loader/lib/plugin')
 module.exports = {
+  ssr: false,
   /*
   ** Headers of the page
   */
@@ -20,8 +19,12 @@ module.exports = {
       { src: 'https://embed.runkit.com/' }
     ]
   },
-  plugins: ['~/plugins/vuetify.js', '~/plugins/highlight.js'],
-  css: ['~/assets/style/app.styl'],
+  plugins: ['~/plugins/highlight.js'],
+  css: ['~/assets/style/main.css'],
+  vuetify: {
+    customVariables: ['~/assets/style/variables.scss'],
+    treeShake: true,
+  },
   /*
   ** Customize the progress bar color
   */
@@ -34,32 +37,14 @@ module.exports = {
    * Generation route
    */
   generate: { dir: 'public' },
+
   /*
-  ** Build configuration
+  ** Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   */
-  build: {
-    transpile: [/^vuetify/],
-    plugins: [
-      new VuetifyLoaderPlugin()
-    ],
-    extractCSS: true,
-    extend (config, ctx) {
-      // Run ESLint on save
-      if (ctx.isDev && ctx.isClient) {
-        config.module.rules.push({
-          enforce: 'pre',
-          test: /\.(js|vue)$/,
-          loader: 'eslint-loader',
-          exclude: /(node_modules)/
-        })
-      }
-      if (process.server) {
-        config.externals = [
-          nodeExternals({
-            whitelist: [/^vuetify/]
-          })
-        ]
-      }
-    }
-  }
+  buildModules: [
+    // https://go.nuxtjs.dev/eslint
+    '@nuxtjs/eslint-module',
+    // https://go.nuxtjs.dev/vuetify
+    '@nuxtjs/vuetify',
+  ]
 }

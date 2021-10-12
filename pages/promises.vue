@@ -1,6 +1,6 @@
 <template>
-  <v-layout column justify-center align-center>
-    <v-flex xs12 sm8 md6>
+  <v-container>
+    
       <v-card>
         <v-card-title class="headline primary--text">L'asynchronisme avec les promesses</v-card-title>
 
@@ -81,7 +81,7 @@ doSomething().then((result) => {
 .catch(failureCallback);</code></pre>
           </p>
 
-          <v-alert :value="true" color="info" icon="info" outline>
+          <v-alert outlined :value="true" color="info" icon="info" outline>
             C'est l'équivalent de la méthode <code>async.waterfall()</code> qui est utilisée pour les callbacks.
           </v-alert>
 
@@ -95,7 +95,7 @@ doSomething().then((result) => {
             </ul>
           </p>
 
-          <v-alert :value="true" color="info" icon="info" outline>
+          <v-alert outlined :value="true" color="info" icon="info" outline>
             C'est l'équivalent de la méthode <code>async.parallel</code> qui est utilisée pour les callbacks.
           </v-alert>
 
@@ -122,7 +122,7 @@ doSomething().then((result) => {
               </li>
               <li>
                 Modifier les tests en conséquence.
-                <v-alert :value="true" color="info" icon="info" outline>
+                <v-alert outlined :value="true" color="info" icon="info" outline>
                   Mocha gère les promesses : <a href="https://mochajs.org/#working-with-promises">https://mochajs.org/#working-with-promises</a>.<br>
                   Pour Chai, il existe un plugin qui permet de faire des assertions sur les promesses : <a href="https://www.chaijs.com/plugins/chai-as-promised/">https://www.chaijs.com/plugins/chai-as-promised/</a>.
                 </v-alert>
@@ -131,8 +131,7 @@ doSomething().then((result) => {
           </p>
         </v-card-text>
       </v-card>
-    </v-flex>
-  </v-layout>
+  </v-container>
 </template>
 
 <script>

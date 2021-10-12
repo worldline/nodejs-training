@@ -1,6 +1,6 @@
 <template>
-  <v-layout column justify-center align-center>
-    <v-flex xs12 sm8 md6>
+  <v-container>
+    
       <v-card>
         <v-card-title class="headline primary--text">Client HTTP</v-card-title>
 
@@ -49,7 +49,7 @@ const { body } = await got('http://www.google.com');</code></pre>
             </ul>
           </p>
 
-          <v-alert :value="true" color="info" icon="info" outline>
+          <v-alert outlined :value="true" color="info" icon="info" outline>
             La librairie <a href="https://www.npmjs.com/package/request">request</a> est actuellement la plus utilisée comme client HTTP.
             Cependant, elle est dorénavant en <a href="https://github.com/request/request/issues/3142">maintenance</a> et n'aura plus de nouvelles fonctionnalités.
           </v-alert>
@@ -65,7 +65,7 @@ const { body } = await got('http://www.google.com');</code></pre>
               <li>modifier <code>getJoke()</code> pour remplacer de la prénom de la joke par votre prénom (voir la <a href="http://www.icndb.com/api/">documentation de l'API</a>).</li>
             </ol>
           </p>
-          <v-alert :value="true" color="warning" icon="warning" outline>
+          <v-alert outlined :value="true" color="warning" icon="warning" outline>
             <ul>
               <li>Si vous utilisez un proxy, utilisez <a href="https://www.npmjs.com/package/caw">caw</a> comme agent HTTP (il gère automatiquement le proxy en fonction des variables d'environnement ;</li>
               <li><code>got</code> va en cas d'erreur automatiquement réessayer de faire la requête (voir le paramètre <a href="https://www.npmjs.com/package/got#retry">retry</a>) ;</li>
@@ -74,8 +74,7 @@ const { body } = await got('http://www.google.com');</code></pre>
           </v-alert>
         </v-card-text>
       </v-card>
-    </v-flex>
-  </v-layout>
+  </v-container>
 </template>
 
 <script>

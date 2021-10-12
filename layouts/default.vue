@@ -1,37 +1,12 @@
 <template>
   <v-app :dark="dark">
-    <v-navigation-drawer
-      v-model="drawer"
-      :mini-variant.sync="miniVariant"
-      :clipped="clipped"
-      fixed
-      app
-    >
-      <v-list>
-        <v-list-tile
-          v-for="(item, i) in items"
-          :key="i"
-          router
-          :to="item.to"
-          exact
-        >
-          <v-list-tile-action>
-            <!-- eslint-disable-next-line vue/no-v-html -->
-            <v-icon v-html="item.icon" />
-          </v-list-tile-action>
-          <v-list-tile-content>
-            <v-list-tile-title v-text="item.title" />
-          </v-list-tile-content>
-        </v-list-tile>
-      </v-list>
-    </v-navigation-drawer>
-    <v-toolbar
+    <v-app-bar
       fixed
       app
       dense
       :clipped-left="clipped"
     >
-      <v-toolbar-side-icon @click="drawer = !drawer" />
+      <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
       <v-btn
         icon
         @click.stop="miniVariant = !miniVariant"
@@ -41,18 +16,46 @@
       </v-btn>
       <v-btn
         icon
-        @click.stop="dark = !dark"
+        @click.stop="toggleTheme()"
       >
         <v-icon v-if="dark">brightness_high</v-icon>
         <v-icon v-if="!dark">brightness_low</v-icon>
       </v-btn>
       <v-toolbar-title v-text="title" />
-    </v-toolbar>
-    <v-content>
-      <v-container>
-        <nuxt />
-      </v-container>
-    </v-content>
+    </v-app-bar>
+
+    <v-navigation-drawer
+      v-model="drawer"
+      :mini-variant.sync="miniVariant"
+      :clipped="clipped"
+      fixed
+      app
+    >
+      <v-list dense>
+        <v-list-item
+          v-for="(item, i) in items"
+          :key="i"
+          router
+          :to="item.to"
+          exact
+        >
+          <v-list-item-icon>
+            <!-- eslint-disable-next-line vue/no-v-html -->
+            <v-icon v-html="item.icon" />
+          </v-list-item-icon>
+          <v-list-item-content>
+            <v-list-tile-title v-text="item.title" />
+          </v-list-item-content>
+        </v-list-item>
+      </v-list>
+    </v-navigation-drawer>
+    <v-main>
+      <transition name="slide">
+        <v-container>
+          <nuxt />
+        </v-container>
+      </transition>
+    </v-main>
   </v-app>
 </template>
 
@@ -88,6 +91,20 @@
         ],
         miniVariant: false,
         title: 'Formation Node.js'
+      }
+    },
+    mounted() {
+      const theme = localStorage.getItem("useDarkTheme");
+        if (theme) {
+          if (theme === "true") {
+            this.$vuetify.theme.dark = true;
+          } else this.$vuetify.theme.dark = false;
+        }
+    },
+    methods: {
+      toggleTheme() {
+        this.$vuetify.theme.dark=!this.$vuetify.theme.dark;
+        localStorage.setItem("useDarkTheme", this.$vuetify.theme.dark.toString())
       }
     }
   }
