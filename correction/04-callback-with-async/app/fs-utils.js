@@ -1,6 +1,6 @@
-const async = require('async');
-const { basename, join } = require('path');
-const fs = require('fs');
+import async from 'async';
+import { basename, join } from 'path';
+import fs from 'fs';
 
 /**
  * Built an array of of absolute paths of files contained in a directory
@@ -11,7 +11,7 @@ const fs = require('fs');
  * @param {Error} err - an optional error if path cannot be read as directory
  * @param {String[]} result - directory content.
  */
-exports.getDirContent = (path, done) => {
+export const getDirContent = (path, done) => {
   fs.readdir(path, (err, content) => {
     // an error happened
     if(err) {
@@ -36,10 +36,10 @@ exports.getDirContent = (path, done) => {
  * @param {Boolean} result.isDirectory - file, directory or unknown nature of the item
  * @param {Number} result.size - item size in octets
  */
-exports.getDirStat = (path, done) => {
+export const getDirStat = (path, done) => {
   async.waterfall([
     // Retrieve list of files
-    (next) => exports.getDirContent(path, next),
+    (next) => getDirContent(path, next),
     // For each file, call fs.stat
     (files, next) => {
       async.map(files, (file, cb) => {

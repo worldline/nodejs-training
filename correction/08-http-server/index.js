@@ -1,1 +1,3 @@
-require('./app/server').start();
+import { start } from './app/server.js';
+
+start();

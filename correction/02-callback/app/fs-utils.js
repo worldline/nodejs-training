@@ -1,5 +1,5 @@
-const { join } = require('path');
-const { readdir } = require('fs');
+import { join } from 'path';
+import { readdir } from 'fs';
 
 /**
  * Built an array of of absolute paths of files contained in a directory
@@ -10,7 +10,7 @@ const { readdir } = require('fs');
  * @param {Error} err - an optional error if path cannot be read as directory
  * @param {String[]} result - directory content.
  */
-exports.getDirContent = (path, done) => {
+export const getDirContent = (path, done) => {
   readdir(path, (err, content) => {
     // an error happened
     if(err) {

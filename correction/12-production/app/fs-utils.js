@@ -1,8 +1,8 @@
-const { basename, join } = require('path');
-const fs = require('fs');
-const { promisify } = require('util');
+import { basename, join } from 'path';
+import fs from 'fs';
+import { promisify } from 'util';
 const readdir = promisify(fs.readdir);
-const logger = require('./logger');
+import logger from './logger.js';
 
 /**
  * Built an array of of absolute paths of files contained in a directory
@@ -10,7 +10,7 @@ const logger = require('./logger');
  *
  * @return {Promise<String[]>} - directory content.
  */
-exports.getDirContent = async (path) => {
+export const getDirContent = async (path) => {
   logger.debug('start getDirContent of %s', path);
   const content = await readdir(path);
   return content.map((fileName) => join(path, fileName));
@@ -26,12 +26,12 @@ exports.getDirContent = async (path) => {
  * @param {Boolean} result.isDirectory - file, directory or unknown nature of the item
  * @param {Number} result.size - item size in octets
  */
-exports.getDirStat = async (path) => {
+export const getDirStat = async (path) => {
   logger.debug('start getDirStat of %s', path);
   const stat = promisify(fs.stat);
 
   // Get list of files
-  const files = await exports.getDirContent(path);
+  const files = await getDirContent(path);
 
   // Call fs.stat for each file
   const stats = await Promise.all(files.map(file => stat(file)));

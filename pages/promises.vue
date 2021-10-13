@@ -24,8 +24,8 @@
                 <br>
                 Par exemple:
                 <pre v-highlightjs><code language="js">
-const { readFile } = require('fs');
-const { join } = require('path');
+import { readFile } from 'fs';
+import { join } from 'path';
 const getFileContent = () => {
   return new Promise((resolve, reject) => {
     readFile(join(__dirname, 'package.json'), (err, res) {

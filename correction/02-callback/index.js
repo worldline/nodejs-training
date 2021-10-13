@@ -1,5 +1,7 @@
-const { getDirContent } = require('./app/fs-utils');
-const { join } = require('path');
+import { getDirContent } from './app/fs-utils.js';
+import { join, dirname } from 'path';
+import { fileURLToPath } from 'url';
+const __dirname = dirname(fileURLToPath(import.meta.url));
 
 // Directory exists
 getDirContent(join(__dirname, 'app'), (err, content) => {

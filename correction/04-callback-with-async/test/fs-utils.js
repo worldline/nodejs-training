@@ -1,8 +1,10 @@
-const fs = require('fs');
-const { join } = require('path');
-const { expect } = require('chai');
-const sinon = require('sinon');
-const { getDirContent, getDirStat } = require('../app/fs-utils');
+import fs from 'fs';
+import { join, dirname } from 'path';
+import { fileURLToPath } from 'url';
+import { expect } from 'chai';
+import sinon from 'sinon';
+import { getDirContent, getDirStat } from '../app/fs-utils.js';
+const __dirname = dirname(fileURLToPath(import.meta.url));
 
 describe('FS utils', () => {
   describe('getDirContent()', () => {

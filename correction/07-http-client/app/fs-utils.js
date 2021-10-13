@@ -1,6 +1,6 @@
-const { basename, join } = require('path');
-const fs = require('fs');
-const { promisify } = require('util');
+import { basename, join } from 'path';
+import fs from 'fs';
+import { promisify } from 'util';
 const readdir = promisify(fs.readdir);
 
 /**
@@ -9,7 +9,7 @@ const readdir = promisify(fs.readdir);
  *
  * @return {Promise<String[]>} - directory content.
  */
-exports.getDirContent = async (path) => {
+export const getDirContent = async (path) => {
   const content = await readdir(path);
   return content.map((fileName) => join(path, fileName));
 };
@@ -24,11 +24,11 @@ exports.getDirContent = async (path) => {
  * @param {Boolean} result.isDirectory - file, directory or unknown nature of the item
  * @param {Number} result.size - item size in octets
  */
-exports.getDirStat = async (path) => {
+export const getDirStat = async (path) => {
   const stat = promisify(fs.stat);
 
   // Get list of files
-  const files = await exports.getDirContent(path);
+  const files = await getDirContent(path);
 
   // Call fs.stat for each file
   const stats = await Promise.all(files.map(file => stat(file)));

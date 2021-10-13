@@ -1,12 +1,14 @@
-const { promisify } = require('util')
-const { join } = require('path');
-const { createReadStream } = require('fs');
-const express = require('express');
-const exphbs  = require('express-handlebars');
-const expressWinston = require('express-winston');
-const { getDirStat } = require('./fs-utils');
-const logger = require('./logger');
-const config = require('config');
+import { promisify } from 'util';
+import { join, dirname } from 'path';
+import { fileURLToPath } from 'url';
+import { createReadStream } from 'fs';
+import express from 'express';
+import exphbs from 'express-handlebars';
+import expressWinston from 'express-winston';
+import { getDirStat } from './fs-utils.js';
+import logger from './logger.js';
+import config from 'config';
+const __dirname = dirname(fileURLToPath(import.meta.url));
 
 const app = express();
 
@@ -77,7 +79,7 @@ let server;
  *
  * @return {Promise}
  */
-module.exports.start = promisify((done) => {
+export const start = promisify((done) => {
   server = app.listen(config.get('port'), done);
 });
 
@@ -86,6 +88,6 @@ module.exports.start = promisify((done) => {
  *
  * @return {Promise}
  */
-module.exports.stop = promisify((done) => {
+export const stop = promisify((done) => {
   server.close(done);
 });

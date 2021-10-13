@@ -1,8 +1,9 @@
-const chai = require('chai');
-const chaiAsPromised = require('chai-as-promised');
+import chai from 'chai';
+import chaiAsPromised from 'chai-as-promised';
 const { expect } = chai;
 chai.use(chaiAsPromised);
-const got = require('got');
+import got from 'got';
+import { start, stop } from '../app/server.js';
 
 // got instance for test
 const httpRequest = got.extend({
@@ -10,13 +11,12 @@ const httpRequest = got.extend({
   retry: 0,
   throwHttpErrors: false // Don't throw an error on 404
 });
-const server = require('../app/server');
 
 describe('HTTP server', () => {
   // Start server before tests
-  before(() => server.start());
+  before(() => start());
   // Stop server after tests
-  after(() => server.stop());
+  after(() => stop());
 
   it('should return a 404 if path doesn\'t exist', async () => {
     // Request GET /foo

@@ -3,9 +3,10 @@
   "version": "1.0.0",
   "description": "HTTP file server",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "start": "node index.js",
-    "test": "NODE_ENV=test nyc --all --include 'app/**/*.js' mocha",
+    "test": "NODE_ENV=test c8 -r text -r html --include 'app/**/*.js' mocha",
     "watch": "NODE_ENV=test mocha -w"
   },
   "author": "",
@@ -20,11 +21,11 @@
     "winston": "^3.3.3"
   },
   "devDependencies": {
+    "c8": "^7.9.0",
     "chai": "^4.3.4",
     "chai-as-promised": "^7.1.1",
     "mocha": "^9.1.1",
     "nock": "^13.1.3",
-    "nyc": "^15.1.0",
     "sinon": "^11.1.2"
   }
 }
