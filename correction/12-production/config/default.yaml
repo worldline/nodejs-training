@@ -1,4 +1,0 @@
-# default configuration
-port: 8080
-log:
-  level: debug

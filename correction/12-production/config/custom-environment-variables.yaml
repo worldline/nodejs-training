@@ -1,5 +1,0 @@
-# file to be able to use environment variables
-# https://github.com/lorenwest/node-config/wiki/Environment-Variables#custom-environment-variables
-port: PORT
-log:
-  level: LOG_LEVEL
