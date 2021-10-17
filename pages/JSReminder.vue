@@ -232,7 +232,7 @@
             <code class="javascript">
   // le for "classique" pour les tableaux
   const count = [ 'one', 'two', 'three' ];
-  for (const i = 0; i &lt; count.length; i++) {
+  for (let i = 0; i &lt; count.length; i++) {
     console.log(i, count[i]);
   }
 
