@@ -16,7 +16,7 @@
     "express": "^4.17.1",
     "express-handlebars": "^5.3.3",
     "express-winston": "^4.2.0",
-    "got": "^11.8.2",
+    "got": "^11.8.5",
     "winston": "^3.3.3"
   },
   "devDependencies": {
