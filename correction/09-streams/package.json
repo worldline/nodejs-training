@@ -15,7 +15,7 @@
     "caw": "^2.0.1",
     "express": "^4.17.1",
     "express-handlebars": "^5.3.3",
-    "got": "^11.8.2",
+    "got": "^11.8.5",
     "morgan": "^1.10.0"
   },
   "devDependencies": {
