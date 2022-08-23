@@ -7,8 +7,12 @@ import { start, stop } from '../app/server.js';
 
 // got instance for test
 const httpRequest = got.extend({
-  timeout: 1000,
-  retry: 0,
+  timeout: {
+    request: 1000
+  },
+  retry: {
+    limit: 0
+  },
   throwHttpErrors: false // Don't throw an error on 404
 });
 

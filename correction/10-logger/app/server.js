@@ -3,18 +3,19 @@ import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
 import { createReadStream } from 'fs';
 import express from 'express';
-import exphbs from 'express-handlebars';
+import { create } from 'express-handlebars';
 import expressWinston from 'express-winston';
 import { getDirStat } from './fs-utils.js';
 import logger from './logger.js';
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
 const app = express();
+const hbs = create({
+  defaultLayout: 'main'
+});
 
 // Use handlebars for templates
-app.engine('handlebars', exphbs({
-  defaultLayout: 'main'
-}));
+app.engine('handlebars', hbs.engine);
 app.set('views', join(__dirname, 'views'));
 app.set('view engine', 'handlebars');
 
