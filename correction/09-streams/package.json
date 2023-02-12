@@ -14,7 +14,7 @@
   "dependencies": {
     "express": "^4.18.1",
     "express-handlebars": "^6.0.6",
-    "got": "^12.3.1",
+    "got": "^12.5.3",
     "morgan": "^1.10.0"
   },
   "devDependencies": {
